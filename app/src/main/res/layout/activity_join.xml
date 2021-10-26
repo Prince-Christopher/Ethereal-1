@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
-            android:text="us."
+            android:text="Ethereal"
             android:textColor="@color/grey"
             android:textSize="40dp" />
 
