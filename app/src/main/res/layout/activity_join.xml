@@ -18,7 +18,6 @@
             android:layout_marginTop="100dp"
 
             android:text="Changes"
-            android:text=" Ethereal App"
             android:textColor="@color/grey"
             android:textSize="40dp" />
 
