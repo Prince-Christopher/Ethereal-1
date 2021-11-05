@@ -4,6 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
+    tools:context=".StartActivity"
+    android:background="@color/pale_pink">
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandonbold"
+        android:text="Ethereal"
+        android:textColor="@color/lavender"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/brandonreg"
+        android:text="@string/quote"
+        android:textColor="@color/lavender"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="@+id/logo"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/getstarted"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/roundedcircle"
+        android:gravity="center"
+        android:text="GET STARTED"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/lavender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/quote"
+        app:layout_constraintStart_toStartOf="@+id/quote"
+        app:layout_constraintTop_toBottomOf="@+id/quote"
+        app:layout_constraintVertical_bias="0.40">
+
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
