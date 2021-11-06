@@ -6,15 +6,16 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class JoinActivity extends AppCompatActivity {
+public class SigninActivity extends AppCompatActivity {
 
-    TextView already;
+    TextView dont;
 
     @Override
     public void onBackPressed() {
-        Intent j = new Intent(JoinActivity.this, StartActivity.class);
+        Intent j = new Intent(SigninActivity.this, StartActivity.class);
         startActivity(j);
         super.onBackPressed();
     }
@@ -23,15 +24,16 @@ public class JoinActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        setContentView(R.layout.activity_join);
+        setContentView(R.layout.activity_signin);
 
-        already = findViewById(R.id.already);
-        already.setOnClickListener(new View.OnClickListener() {
+        dont = findViewById(R.id.dont);
+        dont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(JoinActivity.this, SigninActivity.class);
+                Intent i = new Intent(SigninActivity.this, JoinActivity.class);
                 startActivity(i);
             }
         });
+
     }
 }

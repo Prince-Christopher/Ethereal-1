@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Ethereal</string>
-    <string name="quote">"Follow your heart."</string>
+    <string name="quote">"It's okay to be less than perfect."</string>
+    <string name="i_already"><u>I already have an account</u></string>
 </resources>

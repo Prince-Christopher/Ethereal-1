@@ -41,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="15dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/roundedcircle"
         android:gravity="center"
         android:text="GET STARTED"
@@ -56,5 +56,20 @@
         app:layout_constraintVertical_bias="0.40">
 
     </Button>
+
+    <TextView
+        android:id="@+id/ialready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brandonbold"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/dark_lavender2"
+        android:textSize="15dp"
+        android:text="@string/i_already"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/quote"
+        app:layout_constraintStart_toStartOf="@+id/quote"
+        app:layout_constraintTop_toBottomOf="@+id/getstarted"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

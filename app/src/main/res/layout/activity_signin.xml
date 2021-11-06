@@ -18,26 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="120dp"
-            android:text="Join us."
+            android:text="Sign in."
             android:fontFamily="@font/brandonreg"
             android:textColor="@color/grey"
             android:textSize="40dp" />
-
-        <EditText
-            android:id="@+id/namenickname"
-            android:textColor="@color/grey"
-            android:textColorHint="@color/grey"
-            android:layout_width="match_parent"
-            android:fontFamily="@font/brandonreg"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="90dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/roundedrectangle"
-            android:hint="Name/nickname"
-            android:padding="20dp"
-            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/email"
@@ -48,7 +32,7 @@
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="90dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/roundedrectangle"
             android:hint="Email ID"
@@ -71,6 +55,15 @@
             android:padding="20dp"
             android:textSize="15dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgotten password?"
+            android:fontFamily="@font/brandonreg"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15dp"/>
+
         <Button
             android:id="@+id/submit"
             android:layout_width="match_parent"
@@ -85,37 +78,17 @@
             android:textSize="15dp"
             app:backgroundTint="@color/lavender" />
 
+
         <TextView
-            android:id="@+id/already"
+            android:id="@+id/dont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/brandonreg"
             android:textColor="@color/grey"
             android:layout_marginTop="20dp"
-            android:text="Already have an account? Sign in." />
+            android:text="Don't have an account? Sign up." />
 
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <TextView
-                android:id="@+id/termsandpolicy"
-                android:fontFamily="@font/brandonreg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="bottom"
-                android:gravity="center"
-                android:paddingBottom="20dp"
-                android:text="By signing up, you agree to Ethereal's Terms &amp; Conditions\nand Privacy Policy. "
-                android:textColor="@color/grey"
-                android:textSize="13dp"
-                tools:ignore="HardcodedText" />
-
-        </RelativeLayout>
 
     </LinearLayout>
 
