@@ -11,13 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public class StartActivity extends AppCompatActivity {
 
     Button getstarted;
     TextView ialready;
 
     private long backPressedTime;
-    private Toast backToast;
+    private StyleableToast backToast;
 
     @Override
     public void onBackPressed() {
@@ -27,9 +29,8 @@ public class StartActivity extends AppCompatActivity {
             finishAffinity();
             return;
         } else {
-            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            backToast = StyleableToast.makeText(getBaseContext(), "Press back again to exit", R.style.customtoast);
             backToast.show();
-            backToast.setGravity(Gravity.BOTTOM, 0,0);
         }
         backPressedTime = System.currentTimeMillis();
     }

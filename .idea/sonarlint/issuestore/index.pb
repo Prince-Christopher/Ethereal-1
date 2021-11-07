@@ -1,5 +1,3 @@
 
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+j
+:app/src/main/java/com/example/ethereal/SigninActivity.java,7\a\7a28b7d561ab7f13ddc7bb8976ca25724f27e971
