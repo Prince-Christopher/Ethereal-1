@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994964022050",
+    "project_id": "ethereal-d7f19",
+    "storage_bucket": "ethereal-d7f19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994964022050:android:0b5740b922109afca83b7b",
+        "android_client_info": {
+          "package_name": "com.example.ethereal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994964022050-arbru5vd2orlt283sfr258kiub0br989.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUUHvGeJ8v_e_aLDQ5E0vKaRnp_EZYgSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994964022050-arbru5vd2orlt283sfr258kiub0br989.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
