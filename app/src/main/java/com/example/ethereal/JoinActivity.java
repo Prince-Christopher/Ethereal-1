@@ -33,7 +33,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
     TextView alreadyjoin;
     EditText namenickname,emailjoin,passwordjoin;
     Button submitjoin;
-//    ProgressBar progressBar;
+    ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
 
@@ -61,7 +61,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
 
         alreadyjoin = (TextView) findViewById(R.id.alreadyjoin);
         alreadyjoin.setOnClickListener(this);
-//        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
     }
 
     @Override
@@ -116,12 +116,12 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
                             if(check)
                             {
                                 StyleableToast.makeText(getApplicationContext(), "Email already exists", R.style.customtoast).show();
-//                                progressBar.setVisibility(View.GONE);
+                                progressBar.setVisibility(View.GONE);
                             }
                         }
                     });
         }
-//        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -136,20 +136,20 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//                                progressBar.setVisibility(View.GONE);
+                                progressBar.setVisibility(View.GONE);
 
                                 if (user.isEmailVerified()) {
-//                                    startActivity(new Intent(JoinActivity.this, MainActivity.class));
+                                    startActivity(new Intent(JoinActivity.this, MainActivity.class));
                                 }
                                 else {
                                     user.sendEmailVerification();
                                     StyleableToast.makeText(JoinActivity.this, "Check your email to verify your account", R.style.customtoast).show();
-//                                    progressBar.setVisibility(View.GONE);
+                                    progressBar.setVisibility(View.GONE);
                                 }
                                 if(!task.isSuccessful())
                                 {
                                     StyleableToast.makeText(JoinActivity.this, "Failed to sign up", R.style.customtoast).show();
-//                                    progressBar.setVisibility(View.GONE);
+                                    progressBar.setVisibility(View.GONE);
                                 }
                             }
                         }
