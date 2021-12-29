@@ -8,9 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pale_pink">#FFFBF0F3</color>
+    <color name="pink">#FCE4EC</color>
     <color name="pale_lavender">#E8EAF6</color>
     <color name="lavender">#9FA8DA</color>
     <color name="dark_lavender">#7986CB</color>
     <color name="dark_lavender2">#5C6BC0</color>
-    <color name="grey">#7e7e7e</color>
+    <color name="grey">#8C8C8C</color>
+    <color name="pale_grey">#F8F7F7</color>
+    <color name="dark_grey">#394949</color>
 </resources>

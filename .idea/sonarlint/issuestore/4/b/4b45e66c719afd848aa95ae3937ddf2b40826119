@@ -1,0 +1,20 @@
+
+=
+java:S1659%"'Declare "emailjoin" on a separate line.(úÓ•í
+@
+java:S1659%"*Declare "passwordjoin" on a separate line.(úÓ•í
+<	java:S131T""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+m
+java:S3776^"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(§’ı¯şÿÿÿÿ
+r
+java:S1192e"WDefine a constant instead of duplicating this literal "This field is required" 3 times.(ã®Şœÿÿÿÿÿ
+D
+java:S1604€"(Make this anonymous inner class a lambda(¶§şëûÿÿÿÿ
+D
+java:S1604”"(Make this anonymous inner class a lambda(Ÿ—ÙÎÿÿÿÿÿ
+D
+java:S1604"(Make this anonymous inner class a lambda(‚´´¢ùÿÿÿÿ
+f
+java:S1301T"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+H
+java:S1199~"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ

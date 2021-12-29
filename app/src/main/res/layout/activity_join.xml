@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="120dp"
             android:text="Join us."
-            android:fontFamily="@font/brandonreg"
+            android:fontFamily="@font/lato"
             android:textColor="@color/grey"
             android:textSize="40dp" />
 
@@ -29,7 +29,7 @@
             android:textColorHint="@color/grey"
             android:layout_width="match_parent"
             android:inputType="textPersonName"
-            android:fontFamily="@font/brandonreg"
+            android:fontFamily="@font/lato"
             android:layout_height="70dp"
             android:maxLines="1"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/emailjoin"
             android:textColor="@color/grey"
-            android:fontFamily="@font/brandonreg"
+            android:fontFamily="@font/lato"
             android:textColorHint="@color/grey"
             android:layout_width="match_parent"
             android:inputType="textEmailAddress"
@@ -64,7 +64,7 @@
 
         <EditText
             android:id="@+id/passwordjoin"
-            android:fontFamily="@font/brandonreg"
+            android:fontFamily="@font/lato"
             android:textColor="@color/grey"
             android:textColorHint="@color/grey"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -100,7 +100,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/brandonreg"
+            android:textSize="13dp"
+            android:fontFamily="@font/lato"
             android:textColor="@color/grey"
             android:layout_marginTop="20dp"
             android:text="Already have an account? Sign in." />
@@ -126,12 +127,12 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom"
-        android:fontFamily="@font/brandonreg"
+        android:fontFamily="@font/lato"
         android:gravity="center"
         android:paddingBottom="20dp"
         android:text="By signing up, you agree to Ethereal's Terms &amp; Conditions\nand Privacy Policy. "
         android:textColor="@color/grey"
-        android:textSize="13dp"
+        android:textSize="12dp"
         tools:ignore="HardcodedText" />
 
 

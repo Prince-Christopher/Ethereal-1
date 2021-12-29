@@ -7,10 +7,13 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -37,6 +40,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth mAuth;
 
+
     @Override
     public void onBackPressed() {
         Intent j = new Intent(JoinActivity.this, StartActivity.class);
@@ -50,6 +54,14 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_join);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                window.setStatusBarColor(getColor(R.color.white));
+            }
+        }
+
         mAuth = FirebaseAuth.getInstance();
 
         namenickname = (EditText) findViewById(R.id.namenickname);
@@ -62,7 +74,10 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         alreadyjoin = (TextView) findViewById(R.id.alreadyjoin);
         alreadyjoin.setOnClickListener(this);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
+
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -80,6 +95,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         String name = namenickname.getText().toString().trim();
         String email = emailjoin.getText().toString().trim();
         String password = passwordjoin.getText().toString().trim();
+        String id = mAuth.getCurrentUser().getUid();
 
         if(name.isEmpty()){
             namenickname.setError("This field is required");
@@ -126,7 +142,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(name,email,password);
+                    User user = new User(name,email,password,id);
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
