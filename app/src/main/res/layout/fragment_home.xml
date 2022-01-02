@@ -157,16 +157,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/myschedule"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="My Schedule"
-                    android:textColor="@color/grey"
-                    android:textSize="16dp" />
+                    <TextView
+                        android:id="@+id/myschedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="My Schedule"
+                        android:textColor="@color/grey"
+                        android:textSize="16dp" />
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -214,30 +215,226 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/meditationchants"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Meditation Chants"
-                    android:textColor="@color/grey"
-                    android:textSize="16dp" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/meditationchantstv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Meditation Chants"
+                        android:textColor="@color/grey"
+                        android:textSize="16dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:cardCornerRadius="100dp"
+                        app:cardElevation="0dp"
+                        android:backgroundTint="#FEBE97"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="17dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/next"
+                            android:backgroundTint="@color/white"
+                            android:layout_gravity="center"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/medichant_recycler"
+                        android:layout_marginStart="9dp"
+                        android:overScrollMode="never"
+                        android:layout_marginEnd="9dp"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_marginStart="17dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="20dp" />
 
                 </LinearLayout>
+
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Activities"
+                        android:textColor="@color/grey"
+                        android:textSize="16dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:cardCornerRadius="100dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="@color/aqua"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/next"
+                        android:backgroundTint="@color/white"
+                        android:layout_gravity="center"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/activities_recycler"
+                        android:layout_marginStart="9dp"
+                        android:overScrollMode="never"
+                        android:layout_marginEnd="9dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp">
+
+                <TextView
+                    android:id="@+id/mytherapist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="My Therapist"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/mytherapist"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="10dp"
+                        android:backgroundTint="@color/pale_lavender">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/therapisthome"
+                            android:layout_width="130dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/therapisthome"/>
+
+                            <TextView
+                                android:id="@+id/gettherapist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:textSize="20dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:gravity="center"
+                                android:text="Get a Therapist"
+                                android:layout_toRightOf="@+id/therapisthome"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/lato"
+                                android:textStyle="bold"
+                                android:textSize="12dp"
+                                android:layout_marginStart="7dp"
+                                android:text="Vent your problems and get proper medical care."
+                                android:layout_marginEnd="20dp"
+                                android:layout_below="@+id/gettherapist"
+                                android:layout_toRightOf="@id/therapisthome"/>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/gettherapist"
+                                android:layout_toRightOf="@id/therapisthome">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="180dp"
+                                    android:layout_height="45dp"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="90dp"
+
+                                    android:backgroundTint="@color/pale_lavender"
+                                    android:clickable="true"
+                                    android:elevation="0dp"
+                                    android:foreground="?android:attr/selectableItemBackground"
+                                    app:cardCornerRadius="120dp"
+                                    app:strokeColor="@color/grey"
+                                    app:strokeWidth="1dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lato_bold"
+                                        android:text="BOOK A SESSION"
+                                        android:textColor="@color/grey" />
+
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </RelativeLayout>
+
+            </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

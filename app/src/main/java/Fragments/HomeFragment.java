@@ -16,6 +16,10 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.example.ethereal.HelperClasses.ActivitiesAdapter;
+import com.example.ethereal.HelperClasses.ActivitiesHelperClass;
+import com.example.ethereal.HelperClasses.MeditationAdapter;
+import com.example.ethereal.HelperClasses.MeditationHelperClass;
 import com.example.ethereal.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +27,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import Model.User;
 
@@ -33,6 +39,10 @@ public class HomeFragment extends Fragment {
     private String profileId;
 
     RecyclerView medichant_recycler;
+    RecyclerView.Adapter mediadapter;
+
+    RecyclerView activities_recycler;
+    RecyclerView.Adapter actiadapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,17 +55,44 @@ public class HomeFragment extends Fragment {
         heyusername = view.findViewById(R.id.heyusername);
         medichant_recycler = view.findViewById(R.id.medichant_recycler);
         medichant_recycler.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setStackFromEnd(true);
-        linearLayoutManager.setReverseLayout(true);
-        medichant_recycler.setLayoutManager(linearLayoutManager);
+        LinearLayoutManager medilinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        medilinearLayoutManager.setStackFromEnd(true);
+        medilinearLayoutManager.setReverseLayout(true);
+        medichant_recycler.setLayoutManager(medilinearLayoutManager);
+
+        activities_recycler = view.findViewById(R.id.activities_recycler);
+        activities_recycler.setHasFixedSize(true);
+        LinearLayoutManager actilinearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        actilinearLayoutManager.setStackFromEnd(true);
+        actilinearLayoutManager.setReverseLayout(true);
+        activities_recycler.setLayoutManager(actilinearLayoutManager);
 
         medichant_recycler();
+        activities_recycler();
         helloUser();
         return view;
     }
 
+    private void activities_recycler() {
+        ArrayList<ActivitiesHelperClass> activities = new ArrayList<>();
+        activities.add(new ActivitiesHelperClass(R.drawable.activities_3, "Essential Wellness Pack", "5 exercises."));
+        activities.add(new ActivitiesHelperClass(R.drawable.activities_2, "Improve Self Esteem", "7 exercises."));
+        activities.add(new ActivitiesHelperClass(R.drawable.activities_1, "For Health Anxiety", "5 exercises."));
+
+        actiadapter = new ActivitiesAdapter(activities);
+        activities_recycler.setAdapter(actiadapter);
+    }
+
     private void medichant_recycler() {
+
+        ArrayList<MeditationHelperClass> meditationChants = new ArrayList<>();
+        meditationChants.add(new MeditationHelperClass(R.drawable.meditation_3, "Relaxation Meditation", "1 hour."));
+        meditationChants.add(new MeditationHelperClass(R.drawable.meditation_2, "Guided Meditation", "30 mins."));
+        meditationChants.add(new MeditationHelperClass(R.drawable.meditation_1, "Mindful Meditation", "10 mins."));
+
+        mediadapter = new MeditationAdapter(meditationChants);
+        medichant_recycler.setAdapter(mediadapter);
+
 
     }
 

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ethereal">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".SigninActivity"
+            android:name=".Activities.SigninActivity"
             android:exported="true" />
         <activity
-            android:name=".StartActivity"
+            android:name=".Activities.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JoinActivity"
+            android:name=".Activities.JoinActivity"
             android:exported="true" />
 
         <meta-data

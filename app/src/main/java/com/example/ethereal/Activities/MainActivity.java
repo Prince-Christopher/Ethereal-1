@@ -1,17 +1,17 @@
-package com.example.ethereal;
+package com.example.ethereal.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.ethereal.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Fragments.HomeFragment;

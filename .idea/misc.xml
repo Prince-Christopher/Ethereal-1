@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/meditation_card_design.xml" value="0.4" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activities_card_design.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_join.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_start.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_profile.xml" value="0.11927083333333334" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/meditation_card_design.xml" value="0.176" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal/app/src/main/res/drawable/bg_calendar.xml" value="0.12037037037037036" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal/app/src/main/res/drawable/bottomnav.xml" value="0.22602739726027396" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal/app/src/main/res/drawable/button.xml" value="0.22314814814814815" />
