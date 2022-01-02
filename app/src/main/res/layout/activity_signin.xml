@@ -18,17 +18,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="120dp"
+            android:fontFamily="@font/lato"
             android:text="Sign in."
-            android:fontFamily="@font/brandonreg"
             android:textColor="@color/grey"
             android:textSize="40dp" />
 
         <EditText
-            android:id="@+id/email"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/brandonreg"
-            android:textColorHint="@color/grey"
-            android:textCursorDrawable="@drawable/custom_cursor"
+            android:id="@+id/emailsignin"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -36,16 +32,17 @@
             android:layout_marginTop="90dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/roundedrectangle"
+            android:fontFamily="@font/lato"
             android:hint="Email ID"
+            android:inputType="textEmailAddress"
             android:padding="20dp"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/password"
-            android:fontFamily="@font/brandonreg"
             android:textColor="@color/grey"
             android:textColorHint="@color/grey"
             android:textCursorDrawable="@drawable/custom_cursor"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/passwordsignin"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -53,26 +50,32 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/roundedrectangle"
+            android:fontFamily="@font/lato"
             android:hint="Password (min 8 characters)"
+            android:inputType="textPassword"
             android:padding="20dp"
-            android:textSize="15dp" />
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:textSize="13dp" />
 
         <TextView
+            android:id="@+id/forgotpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgotten password?"
-            android:fontFamily="@font/brandonreg"
             android:layout_marginStart="22dp"
             android:layout_marginTop="20dp"
-            android:textSize="15dp"/>
+            android:fontFamily="@font/lato"
+            android:text="Forgotten password?"
+            android:textSize="13dp" />
 
         <Button
-            android:id="@+id/submit"
+            android:id="@+id/submitsignin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/roundedcircle"
             android:padding="10dp"
@@ -82,16 +85,28 @@
 
 
         <TextView
-            android:id="@+id/dont"
+            android:id="@+id/dontsignin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/brandonreg"
-            android:textColor="@color/grey"
+            android:textSize="13dp"
             android:layout_marginTop="20dp"
-            android:text="Don't have an account? Sign up." />
+            android:fontFamily="@font/lato"
+            android:text="Don't have an account? Sign up."
+            android:textColor="@color/grey" />
 
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/lavender"/>
 
 </RelativeLayout>

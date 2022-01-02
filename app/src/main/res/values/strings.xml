@@ -2,4 +2,7 @@
     <string name="app_name">Ethereal</string>
     <string name="quote">"It's okay to be less than perfect."</string>
     <string name="i_already"><u>I already have an account</u></string>
+    <string name="health_points">Based on your overall health test,\npoints you have secured is 84.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
