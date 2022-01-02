@@ -39,7 +39,7 @@
             android:textColor="@color/grey"
             android:textColorHint="@color/grey"
             android:textCursorDrawable="@drawable/custom_cursor"
-            android:textSize="15dp" />
+            android:textSize="13dp" />
 
         <EditText
             android:id="@+id/passwordsignin"
@@ -57,7 +57,7 @@
             android:textColor="@color/grey"
             android:textColorHint="@color/grey"
             android:textCursorDrawable="@drawable/custom_cursor"
-            android:textSize="15dp" />
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/forgotpassword"

@@ -64,7 +64,7 @@
         android:fontFamily="@font/lato_bold"
         android:layout_marginTop="25dp"
         android:textColor="@color/dark_lavender2"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:text="@string/i_already"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/quote"

@@ -67,90 +67,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:layout_marginEnd="15dp"
-                android:backgroundTint="@color/pale_lavender"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:backgroundTint="@color/pale_lavender"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/pentagon"
-                        android:backgroundTint="@color/lavender"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/healthpoints"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:textColor="@color/grey"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Health Points"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/pentagon"
+                            android:backgroundTint="@color/lavender"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/hpdescription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/lato"
-                        android:text="@string/health_points"
-                        android:textColor="@color/lavender"
-                        android:textSize="14dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/healthpoints"
-                        app:layout_constraintVertical_bias="0.0" />
+                        <TextView
+                            android:id="@+id/healthpoints"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="17dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="Health Points"
+                            android:textColor="@color/grey"
+                            android:textSize="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/imageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/hp_next"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/next"
-                        android:backgroundTint="@color/lavender"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toEndOf="@+id/hpdescription"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+                        <TextView
+                            android:id="@+id/hpdescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/lato"
+                            android:text="@string/health_points"
+                            android:textColor="@color/lavender"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/imageView"
+                            app:layout_constraintTop_toBottomOf="@+id/healthpoints"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <ImageView
+                            android:id="@+id/hp_next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/next"
+                            android:backgroundTint="@color/lavender"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/hpdescription"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
 
 
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -160,27 +161,82 @@
                     android:id="@+id/myschedule"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/lato_bold"
                     android:text="My Schedule"
                     android:textColor="@color/grey"
-                    android:fontFamily="@font/lato_bold"
-                    android:textSize="18dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginStart="17dp"/>
+                    android:textSize="16dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:background="@drawable/bg_calendar"
-                    android:layout_gravity="center">
-                <CalendarView
-                    android:id="@+id/simpleCalendarView"
-                    android:layout_width="350dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"/>
+                    android:background="@drawable/bg_calendar">
+
+                    <CalendarView
+                        android:id="@+id/simpleCalendarView"
+                        android:layout_width="350dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:selectedWeekBackgroundColor="@color/lavender" />
 
                 </LinearLayout>
 
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="120dp"
+                    app:strokeColor="@color/lavender"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="+ ADD GOAL"
+                        android:textColor="@color/lavender" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/meditationchants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Meditation Chants"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/medichant_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="20dp" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

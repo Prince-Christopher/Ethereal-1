@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,8 @@ public class HomeFragment extends Fragment {
     private FirebaseUser fUser;
     private String profileId;
 
+    RecyclerView medichant_recycler;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,11 +43,24 @@ public class HomeFragment extends Fragment {
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         profileId = fUser.getUid();
         heyusername = view.findViewById(R.id.heyusername);
+        medichant_recycler = view.findViewById(R.id.medichant_recycler);
+        medichant_recycler.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setStackFromEnd(true);
+        linearLayoutManager.setReverseLayout(true);
+        medichant_recycler.setLayoutManager(linearLayoutManager);
+
+        medichant_recycler();
         helloUser();
         return view;
     }
 
-        private void helloUser() {
+    private void medichant_recycler() {
+
+    }
+
+
+    private void helloUser() {
 
             FirebaseDatabase.getInstance().getReference().child("Users").child(profileId).addValueEventListener(new ValueEventListener() {
                 @Override

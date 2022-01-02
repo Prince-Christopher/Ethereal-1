@@ -50,7 +50,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.setStatusBarColor(getColor(R.color.white));
+                window.setStatusBarColor(getColor(R.color.dark_grey));
             }
         }
 

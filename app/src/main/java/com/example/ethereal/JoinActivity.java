@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import Model.User;
@@ -58,7 +55,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.setStatusBarColor(getColor(R.color.white));
+                window.setStatusBarColor(getColor(R.color.dark_grey));
             }
         }
 
@@ -95,7 +92,6 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         String name = namenickname.getText().toString().trim();
         String email = emailjoin.getText().toString().trim();
         String password = passwordjoin.getText().toString().trim();
-        String id = mAuth.getCurrentUser().getUid();
 
         if(name.isEmpty()){
             namenickname.setError("This field is required");
@@ -142,7 +138,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(name,email,password,id);
+                    User user = new User(name,email,password);
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
