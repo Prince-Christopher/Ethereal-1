@@ -4,6 +4,8 @@
     android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
+    android:layout_marginEnd="9dp"
+    android:layout_marginStart="9dp"
     android:backgroundTint="@color/pale_yellow"
     app:cardElevation="0dp">
 
@@ -13,29 +15,30 @@
         android:orientation="vertical">
 
     <TextView
+        android:id="@+id/medititle1"
         android:layout_width="wrap_content"
-        style="@style/Theme.Ethereal"
         android:layout_height="wrap_content"
-        android:text="Mindful Meditation"
         android:layout_marginTop="15dp"
         android:layout_marginStart="10dp"
         android:fontFamily="@font/lato_bold"
         android:textSize="15dp"/>
 
     <TextView
+        android:id="@+id/mediddesc1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10 mins."
         android:fontFamily="@font/lato_bold"
         android:textSize="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"/>
 
     <ImageView
-        android:layout_width="150dp"
+        android:id="@+id/mediimg1"
+        android:layout_width="130dp"
+        android:backgroundTint="@color/pale_green"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"
-        android:layout_height="100dp"
-        android:background="@drawable/meditation_1"/>
+        android:layout_height="100dp" />
 
     </LinearLayout>
 
