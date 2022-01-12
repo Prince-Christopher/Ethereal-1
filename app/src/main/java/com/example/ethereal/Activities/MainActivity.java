@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.tasks:
                         selectorFragment = new TasksFragment();
                         break;
+                    case R.id.nancy:
+                        selectorFragment = null;
+                        startActivity(new Intent(MainActivity.this, NancyActivity.class));
+                        break;
                     case R.id.therapists:
                         selectorFragment = new TherapistsFragment();
                         break;

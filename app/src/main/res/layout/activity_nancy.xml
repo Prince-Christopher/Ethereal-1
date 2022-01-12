@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.NancyActivity"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/botappbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lavender">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bottoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lavender"
+            android:elevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/botback"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:backgroundTint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/nancy"
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@id/botback"
+                    android:background="@drawable/nancy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/nancy"
+                    android:text="Nancy"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/white"/>
+
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/botchatsRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/botappbar"
+        android:layout_above="@id/botmessagelayout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:id="@+id/botmessagelayout"
+        android:elevation="20dp">
+
+        <EditText
+            android:id="@+id/bottypemessage"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/botsendmessage"
+            android:background="@drawable/roundedcircle"
+            android:backgroundTint="@color/pale_pink"
+            android:fontFamily="@font/lato"
+            android:hint="Enter your message.."
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            android:textColor="@color/dark_lavender2"
+            android:textColorHint="@color/dark_lavender2"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:textSize="15dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_marginTop="10dp"
+            android:id="@+id/botsendmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/send"
+            app:backgroundTint="@color/pale_pink"
+            app:elevation="1dp"
+            app:fabCustomSize="45dp"
+            app:tint="@color/dark_lavender2" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

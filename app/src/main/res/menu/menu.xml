@@ -8,6 +8,11 @@
         android:id="@+id/tasks"
         android:icon="@drawable/tasks"
         android:title="Tasks"/>
+
+    <item
+        android:id="@+id/nancy"
+        android:icon="@drawable/nancynav"
+        android:title="Nancy"/>
     <item
         android:id="@+id/therapists"
         android:icon="@drawable/therapists"
