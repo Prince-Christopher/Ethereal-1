@@ -124,6 +124,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                                 Intent intent = new Intent(SigninActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
                                 finish();
                             }
                         }else {

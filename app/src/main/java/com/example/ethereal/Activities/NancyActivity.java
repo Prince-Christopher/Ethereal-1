@@ -42,10 +42,20 @@ public class NancyActivity extends AppCompatActivity {
     private ArrayList<Chats>chatsArrayList;
     private ChatAdapter chatAdapter;
     public ImageButton back;
+
+    @Override
+    public void onBackPressed() {
+        Intent j = new Intent(NancyActivity.this, MainActivity.class);
+        startActivity(j);
+        super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nancy);
+
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
