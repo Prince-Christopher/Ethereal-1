@@ -11,10 +11,16 @@
         android:theme="@style/Theme.Ethereal"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name=".Activities.ForgotActivity"
-            android:exported="true" />
+            android:name=".Activities.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".ForgotActivity"
+            android:name=".Activities.ForgotActivity"
             android:exported="true" />
         <activity
             android:name=".Activities.NancyActivity"
@@ -28,11 +34,6 @@
         <activity
             android:name=".Activities.StartActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activities.JoinActivity"

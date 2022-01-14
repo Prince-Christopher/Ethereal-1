@@ -3,6 +3,7 @@ package com.example.ethereal.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PatternMatcher;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.example.ethereal.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import io.github.muddz.styleabletoast.StyleableToast;
@@ -28,7 +30,7 @@ public class ForgotActivity extends AppCompatActivity {
     private EditText forgotemail;
     private Button forgotreset;
     private ProgressBar forgotprogressbar;
-    private ImageView forgotback;
+    private MaterialCardView forgotback;
 
     FirebaseAuth auth;
 
@@ -51,7 +53,8 @@ public class ForgotActivity extends AppCompatActivity {
             forgotback.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    Intent i = new Intent(ForgotActivity.this, SigninActivity.class);
+                    startActivity(i);
                 }
             });
 

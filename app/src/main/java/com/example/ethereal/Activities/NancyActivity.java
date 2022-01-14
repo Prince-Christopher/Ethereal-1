@@ -65,11 +65,11 @@ public class NancyActivity extends AppCompatActivity {
         chatsRV.setLayoutManager(manager);
         chatsRV.setAdapter(chatAdapter);
         back = findViewById(R.id.botback);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent i = new Intent(NancyActivity.this, MainActivity.class);
+                startActivity(i);
             }
         });
 
