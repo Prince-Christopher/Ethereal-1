@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ethereal</string>
     <string name="quote">"It's okay to be less than perfect."</string>
+    <string name="forgotdesc">"We will send an email to your registered ID with \ninstructions to reset your password."</string>
     <string name="therapistquote">"The role of the therapist is to reflect the being/accepting self\n that was never allowed to be in the borderline."\n― Michael Adzema."</string>
     <string name="i_already"><u>I already have an account</u></string>
     <string name="health_points">Based on your overall health test,\npoints you have secured is 84.</string>

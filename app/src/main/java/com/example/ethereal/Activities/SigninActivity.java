@@ -58,6 +58,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
         passwordsignin = findViewById(R.id.passwordsignin);
 
         forgotpassword = findViewById(R.id.forgotpassword);
+        forgotpassword.setOnClickListener(this);
         progressBar = findViewById(R.id.progressbar);
 
         mAuth = FirebaseAuth.getInstance();
@@ -77,6 +78,9 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.dontsignin:
                 startActivity(new Intent(this, JoinActivity.class));
+                break;
+            case R.id.forgotpassword:
+                startActivity(new Intent(this, ForgotActivity.class));
                 break;
         }
 
