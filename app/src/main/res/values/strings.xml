@@ -5,6 +5,9 @@
     <string name="therapistquote">"The role of the therapist is to reflect the being/accepting self\n that was never allowed to be in the borderline."\n― Michael Adzema."</string>
     <string name="i_already"><u>I already have an account</u></string>
     <string name="health_points">Based on your overall health test,\npoints you have secured is 84.</string>
+    <string name="welcomedesc1">Get help with common mental health problems\nsuch as stress, anxiety, depression\nand panic attacks. In a safer space.</string>
+    <string name="welcomedesc2">Discover and plan the activities that you find\nmost useful. We will remind you beforehand\nand help you self-reflect afterwards.</string>
+    <string name="welcomedesc3">Stay motivated by logging your mood, stress,\nmindfulness or sleep seeing these changes\nover time.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

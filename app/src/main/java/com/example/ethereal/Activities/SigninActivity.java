@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import OnBoarding.OnBoardingActivity;
 import io.github.muddz.styleabletoast.StyleableToast;
 
 public class SigninActivity extends AppCompatActivity implements View.OnClickListener{
@@ -120,8 +121,8 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                             progressBar.setVisibility(View.GONE);
 
                             if (user.isEmailVerified()) {
-                                StyleableToast.makeText(SigninActivity.this, "Welcome to your comfy space ;)", R.style.customtoast).show();
-                                Intent intent = new Intent(SigninActivity.this, MainActivity.class);
+                                StyleableToast.makeText(SigninActivity.this, "Let's get started!", R.style.customtoast).show();
+                                Intent intent = new Intent(SigninActivity.this, OnBoardingActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);

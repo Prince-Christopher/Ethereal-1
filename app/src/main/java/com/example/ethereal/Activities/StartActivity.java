@@ -18,7 +18,7 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class StartActivity extends AppCompatActivity {
 
-    Button getstarted;
+    Button started;
     TextView ialready;
 
     private long backPressedTime;
@@ -52,10 +52,10 @@ public class StartActivity extends AppCompatActivity {
             }
         }
 
-        getstarted = findViewById(R.id.getstarted);
+        started = findViewById(R.id.started);
         ialready = findViewById(R.id.ialready);
 
-        getstarted.setOnClickListener(new View.OnClickListener() {
+        started.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(StartActivity.this, JoinActivity.class);
