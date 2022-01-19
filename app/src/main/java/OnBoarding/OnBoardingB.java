@@ -21,6 +21,7 @@ public class OnBoardingB extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_on_boarding_b, container, false);
+
         skiptomain2 = view.findViewById(R.id.skiptomain2);
         skiptomain2.setOnClickListener(new View.OnClickListener() {
             @Override

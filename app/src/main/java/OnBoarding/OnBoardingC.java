@@ -23,6 +23,7 @@ public class OnBoardingC extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_on_boarding_c, container, false);
+
         skiptomain3 = view.findViewById(R.id.skiptomain3);
         skiptomain3.setOnClickListener(new View.OnClickListener() {
             @Override

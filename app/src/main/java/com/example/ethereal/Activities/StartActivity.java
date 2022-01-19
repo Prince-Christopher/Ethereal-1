@@ -48,7 +48,7 @@ public class StartActivity extends AppCompatActivity {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.setStatusBarColor(getColor(R.color.dark_grey));
+                window.setStatusBarColor(getColor(R.color.pale_pink));
             }
         }
 

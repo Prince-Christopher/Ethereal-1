@@ -36,7 +36,9 @@
             android:exported="true" />
         <activity
             android:name=".Activities.StartActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:launchMode="singleTop">
+        </activity>
         <activity
             android:name=".Activities.JoinActivity"
             android:exported="true" />
