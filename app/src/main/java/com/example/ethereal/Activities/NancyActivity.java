@@ -43,6 +43,7 @@ public class NancyActivity extends AppCompatActivity {
     private ChatAdapter chatAdapter;
     public ImageButton back;
 
+
     @Override
     public void onBackPressed() {
         Intent j = new Intent(NancyActivity.this, MainActivity.class);
