@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ForgotActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/forgotback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="100dp"
+            android:layout_marginStart="15dp"
+            app:cardElevation="0dp"
+            android:backgroundTint="@color/pale_grey"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/back"
+                android:backgroundTint="@color/grey"
+                android:layout_gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="Forgot your password?"
+            android:textColor="@color/grey"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/forgotdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/forgotdesc"
+            android:textColor="@color/grey"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/forgotemail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/roundedrectangle"
+            android:fontFamily="@font/lato"
+            android:hint="Email ID"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:textSize="13dp" />
+
+
+        <Button
+            android:id="@+id/forgotreset"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/roundedcircle"
+            android:padding="10dp"
+            android:text="RESET PASSWORD"
+            android:textSize="15dp"
+            app:backgroundTint="@color/lavender" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/forgotprogressbar"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/lavender"/>
+
+</RelativeLayout>
