@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 
 import com.example.ethereal.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,18 +20,30 @@ import Fragments.HomeFragment;
 import Fragments.ProfileFragment;
 import Fragments.TasksFragment;
 import Fragments.TherapistsFragment;
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class MainActivity extends AppCompatActivity {
 
     Fragment selectorFragment;
     BottomNavigationView bottomNavigationView;
 
+    private long backPressedTime;
+    private StyleableToast backToast;
+
     @Override
     public void onBackPressed() {
-        Intent j = new Intent(MainActivity.this, StartActivity.class);
-        startActivity(j);
-        super.onBackPressed();
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            finishAffinity();
+            return;
+        } else {
+            backToast = StyleableToast.makeText(getBaseContext(), "Press back again to exit", R.style.customtoast);
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 window.setStatusBarColor(getColor(R.color.dark_grey));
             }
         }
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.home);
