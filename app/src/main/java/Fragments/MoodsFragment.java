@@ -2,22 +2,29 @@ package Fragments;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.ethereal.R;
 
-public class TherapistsFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+import Model.Moods;
+
+public class MoodsFragment extends Fragment {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        return inflater.inflate(R.layout.fragment_therapists, container, false);
+        View view = inflater.inflate(R.layout.fragment_moods, container, false);
+        return view;
+
     }
 }

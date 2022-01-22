@@ -8,6 +8,7 @@
     tools:context=".Activities.SplashActivity">
 
     <ImageView
+        android:id="@+id/nancysplash"
         android:layout_width="100dp"
         android:layout_height="95dp"
         android:background="@drawable/nancy"

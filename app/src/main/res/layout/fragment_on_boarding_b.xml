@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:background="@drawable/onboard_bg"
         android:backgroundTint="@color/lavender"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,12 +35,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
-            <ImageView
+            <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/nancyonboardingb"
-                android:layout_width="100dp"
-                android:layout_height="95dp"
-                android:backgroundTint="@color/pale_pink"
-                android:background="@drawable/nancynav"
+                android:layout_width="300dp"
+                android:layout_height="295dp"
+                android:background="@drawable/onboardingb"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -87,10 +86,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="horizontal"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomedesc2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ethereal.Activities.BreatheActivity;
 import com.example.ethereal.Activities.MainActivity;
 import com.example.ethereal.R;
 
@@ -23,12 +24,16 @@ public class OnBoardingC extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_on_boarding_c, container, false);
+
         skiptomain3 = view.findViewById(R.id.skiptomain3);
         skiptomain3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplication(), MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
+                getActivity().overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
+                getActivity().finish();
             }
         });
         return view;

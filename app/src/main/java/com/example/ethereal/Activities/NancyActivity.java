@@ -1,6 +1,7 @@
 package com.example.ethereal.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,6 +44,7 @@ public class NancyActivity extends AppCompatActivity {
     private ChatAdapter chatAdapter;
     public ImageButton back;
 
+
     @Override
     public void onBackPressed() {
         Intent j = new Intent(NancyActivity.this, MainActivity.class);
@@ -53,6 +55,7 @@ public class NancyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_nancy);
 
 
