@@ -21,4 +21,13 @@
     <color name="pale_grey">#F8F7F7</color>
     <color name="dark_grey">#394949</color>
     <color name="mild_grey">#C5C5C5</color>
+    <color name="happyyellow">#FFF9C4</color>
+    <color name="relaxedcerulean">#BBDEFB</color>
+    <color name="neutralpink">#F8BBD0</color>
+    <color name="sadpurple">#E1BEE7</color>
+    <color name="angryred">#EDACAC</color>
+    <color name="fearycyan">#B2DFDB</color>
+    <color name="proudtangerine">#FFCCBC</color>
+    <color name="sickviolet">#D1C4E9</color>
+    <color name="sillyred">#FFCDD2</color>
 </resources>

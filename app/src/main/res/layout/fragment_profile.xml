@@ -81,9 +81,6 @@
 
     </LinearLayout>
 
-
-
-
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:id="@+id/tablayout"
@@ -101,7 +98,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Moods" />
+            android:text="Mood" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

@@ -59,7 +59,7 @@ public class ProfileFragment extends Fragment {
     private void setUpViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
 
-        adapter.addFragment(new MoodsFragment(), "Moods");
+        adapter.addFragment(new MoodsFragment(), "Mood");
         adapter.addFragment(new NotificationsFragment(), "Notifications");
         adapter.addFragment(new JournalFragment(), "Journal");
         viewPager.setAdapter(adapter);

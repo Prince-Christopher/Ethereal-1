@@ -1,8 +1,428 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Fragments.MoodsFragment">
-    
 
-</FrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How are you feeling today?"
+                android:layout_gravity="center"
+                android:textSize="15dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/lato"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/pale_grey"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp">
+                
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:rowCount="9"
+                    android:columnCount="9">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_gravity="fill"
+                        app:cardElevation="1dp"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        app:cardUseCompatPadding="true"
+                        android:backgroundTint="@color/happyyellow">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_horizontal|center_vertical">
+
+                            <ImageView
+                                android:id="@+id/happy"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/happyline"
+                                android:backgroundTint="@color/grey"
+                                android:layout_gravity="center_vertical|center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/happytitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Happy"
+                                android:textColor="@color/grey"
+                                android:fontFamily="@font/lato"
+                                android:textSize="12dp"
+                                android:layout_gravity="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_gravity="fill"
+                        app:cardElevation="1dp"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        app:cardUseCompatPadding="true"
+                        android:backgroundTint="@color/relaxedcerulean">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_horizontal|center_vertical">
+
+                            <ImageView
+                                android:id="@+id/relaxed"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/relaxedline"
+                                android:backgroundTint="@color/grey"
+                                android:layout_gravity="center_vertical|center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/relaxedtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Relaxed"
+                                android:textColor="@color/grey"
+
+                                android:fontFamily="@font/lato"
+                                android:textSize="12dp"
+                                android:layout_gravity="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="0"
+                        android:layout_column="2"
+                        android:layout_gravity="fill"
+                        app:cardElevation="1dp"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        app:cardUseCompatPadding="true"
+                        android:backgroundTint="@color/neutralpink">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_horizontal|center_vertical">
+
+                            <ImageView
+                                android:id="@+id/neutral"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/neutralline"
+                                android:backgroundTint="@color/grey"
+                                android:layout_gravity="center_vertical|center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/neutraltitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Neutral"
+                                android:textColor="@color/grey"
+
+                                android:fontFamily="@font/lato"
+                                android:textSize="12dp"
+                                android:layout_gravity="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="fill"
+                        app:cardElevation="1dp"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        app:cardUseCompatPadding="true"
+                        android:backgroundTint="@color/sadpurple">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_horizontal|center_vertical">
+
+                            <ImageView
+                                android:id="@+id/sad"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/sadline"
+                                android:backgroundTint="@color/grey"
+                                android:layout_gravity="center_vertical|center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/sadtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Sad"
+                                android:textColor="@color/grey"
+
+                                android:fontFamily="@font/lato"
+                                android:textSize="12dp"
+                                android:layout_gravity="center"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="1"
+                        android:layout_rowWeight="1"
+                        android:layout_column="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:backgroundTint="@color/angryred"
+                        app:cardElevation="1dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/angry"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/angryline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/angrytitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+
+                                android:text="Angry"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="1"
+                        android:layout_rowWeight="1"
+                        android:layout_column="2"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:backgroundTint="@color/fearycyan"
+                        app:cardElevation="1dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/fear"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/fearline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/feartitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+
+                                android:text="Fear"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="2"
+                        android:layout_rowWeight="1"
+                        android:layout_column="0"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:backgroundTint="@color/proudtangerine"
+                        app:cardElevation="1dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/proud"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/proudline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/proudtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+
+                                android:text="Proud"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="2"
+                        android:layout_rowWeight="1"
+                        android:layout_column="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:backgroundTint="@color/sickviolet"
+                        app:cardElevation="1dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/sick"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/sickline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/sicktitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+
+                                android:text="Sick"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_row="2"
+                        android:layout_rowWeight="1"
+                        android:layout_column="2"
+                        android:layout_columnWeight="1"
+                        android:backgroundTint="@color/sillyred"
+                        app:cardElevation="1dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/silly"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/sillyline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/sillytitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+
+                                android:text="Silly"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </GridLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
