@@ -47,6 +47,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/notifications"
+                    android:hapticFeedbackEnabled="true"
                     app:itemRippleColor="@color/grey" />
 
             </RelativeLayout>
@@ -70,6 +71,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
+                    android:hapticFeedbackEnabled="true"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="15dp"
@@ -177,7 +179,7 @@
 
                     <CalendarView
                         android:id="@+id/simpleCalendarView"
-                        android:layout_width="350dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:selectedWeekBackgroundColor="@color/lavender" />
@@ -189,6 +191,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="100dp"
                     android:layout_marginEnd="100dp"
+                    android:hapticFeedbackEnabled="true"
                     android:backgroundTint="@color/white"
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -233,6 +236,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         app:cardCornerRadius="100dp"
+                        android:hapticFeedbackEnabled="true"
                         app:cardElevation="0dp"
                         android:backgroundTint="#FEBE97"
                         android:layout_alignParentEnd="true"
@@ -283,7 +287,7 @@
                         android:layout_marginStart="17dp"
                         android:layout_marginTop="25dp"
                         android:fontFamily="@font/lato_bold"
-                        android:text="Activities"
+                        android:text="Health Courses"
                         android:textColor="@color/grey"
                         android:textSize="16dp" />
 
@@ -292,10 +296,11 @@
                     android:layout_height="30dp"
                     app:cardCornerRadius="100dp"
                     app:cardElevation="0dp"
+                    android:hapticFeedbackEnabled="true"
                     android:backgroundTint="@color/aqua"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="17dp"
+                    android:layout_marginEnd="16dp"
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground">
 
@@ -406,7 +411,7 @@
                                     android:layout_height="45dp"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginTop="90dp"
-
+                                    android:hapticFeedbackEnabled="true"
                                     android:backgroundTint="@color/pale_lavender"
                                     android:clickable="true"
                                     android:elevation="0dp"

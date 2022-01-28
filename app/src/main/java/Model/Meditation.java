@@ -1,23 +1,25 @@
 package Model;
 
-public class Moods {
-
-    private String MoodsTitle;
+public class Meditation {
+    private String Title;
     private String Description;
     private int Thumbnail;
 
-    public Moods(String moodsTitle, String description, int thumbnail) {
-        MoodsTitle = moodsTitle;
+    public Meditation() {
+    }
+
+    public Meditation(String title, String description, int thumbnail) {
+        Title = title;
         Description = description;
         Thumbnail = thumbnail;
     }
 
-    public String getMoodsTitle() {
-        return MoodsTitle;
+    public String getTitle() {
+        return Title;
     }
 
-    public void setMoodsTitle(String moodsTitle) {
-        MoodsTitle = moodsTitle;
+    public void setTitle(String title) {
+        Title = title;
     }
 
     public String getDescription() {

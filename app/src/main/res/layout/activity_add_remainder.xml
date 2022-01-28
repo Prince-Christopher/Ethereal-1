@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/remainderback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="100dp"
+            android:layout_marginStart="15dp"
+            app:cardElevation="0dp"
+            android:backgroundTint="@color/pale_grey"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/back"
+                android:backgroundTint="@color/grey"
+                android:layout_gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/remainderback"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/remainderback"
+            android:fontFamily="@font/lato_bold"
+            android:text="Set Goals"
+            android:textColor="@color/grey"
+            android:textSize="18dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/namecard"
+            android:layout_below="@id/remainderback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/sixteen_dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Goal Name"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/lato" />
+
+                <EditText
+                    android:id="@+id/edit_med_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter your goal"
+                    android:textSize="15dp"
+                    android:backgroundTint="@color/lavender"
+                    android:textColorHint="@color/lavender"
+                    android:textColor="@color/lavender"
+                    android:fontFamily="@font/lato"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/schedulecard"
+            android:layout_below="@id/namecard"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/sixteen_dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule Days"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/lato" />
+
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/every_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_marginStart="-3dp"
+                    android:text="Every Day" />
+
+                <LinearLayout
+                    android:id="@+id/checkbox_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="7">
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_sunday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/grey"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="S" />
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_monday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="M" />
+
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_tuesday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="T" />
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_wednesday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="W" />
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_thursday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="T" />
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_friday"
+                        android:layout_width="40dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="F" />
+
+
+                    <com.example.ethereal.views.DayViewCheckBox
+                        android:id="@+id/dv_saturday"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:textColor="@color/grey"
+
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/background_day_view"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="S" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/remaindercard"
+            android:layout_below="@id/schedulecard"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/sixteen_dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Remainder"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/lato" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_medicine_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/drawable_underline"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:textColor="@color/lavender"
+                        tools:text="23:30" />
+
+                    <TextView
+                        android:id="@+id/tv_dose_quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1.5"
+                        android:textColor="@color/lavender"
+                        android:background="@drawable/drawable_underline"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="1.0" />
+
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_dose_units"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:entries="@array/medications_shape_array" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -31,6 +31,7 @@ public class BreatheActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 window.setStatusBarColor(getColor(R.color.pale_pink));
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             }
         }
         breathe = findViewById(R.id.breathe);
@@ -38,7 +39,7 @@ public class BreatheActivity extends AppCompatActivity {
         anim = AnimationUtils.loadAnimation(this,R.anim.transition_anim);
         breathe.startAnimation(anim);
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 Intent i = new Intent(BreatheActivity.this, MainActivity.class);
@@ -48,7 +49,9 @@ public class BreatheActivity extends AppCompatActivity {
                 finish();
 
             }
-        }, 10000);
+        };
+        handler.postDelayed(runnable, 10000);
+        handler.removeCallbacks(runnable);
         skip = findViewById(R.id.skip);
         skip.setOnClickListener(new View.OnClickListener() {
             @Override

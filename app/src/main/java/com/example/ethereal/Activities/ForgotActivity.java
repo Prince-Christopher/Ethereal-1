@@ -46,7 +46,9 @@ public class ForgotActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 window.setStatusBarColor(getColor(R.color.white));
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             }
+        }
             forgotemail = findViewById(R.id.forgotemail);
             forgotreset = findViewById(R.id.forgotreset);
             forgotprogressbar = findViewById(R.id.forgotprogressbar);
@@ -68,7 +70,7 @@ public class ForgotActivity extends AppCompatActivity {
                 }
             });
         }
-    }
+
 
     private void reset() {
         String email = forgotemail.getText().toString().trim();

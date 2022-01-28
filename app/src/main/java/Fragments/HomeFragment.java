@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         profileId = fUser.getUid();
         heyusername = view.findViewById(R.id.heyusername);
