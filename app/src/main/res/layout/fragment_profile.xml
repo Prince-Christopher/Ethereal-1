@@ -11,27 +11,40 @@
         android:id="@+id/top"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/profiletback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:cardCornerRadius="100dp"
-            android:layout_marginStart="15dp"
-            app:cardElevation="0dp"
-            android:backgroundTint="@color/pale_grey"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="17dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:background="@drawable/back"
-                android:backgroundTint="@color/grey"
-                android:layout_gravity="center"/>
-        </com.google.android.material.card.MaterialCardView>
+                android:id="@+id/edit"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:hapticFeedbackEnabled="true"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toLeftOf="@id/logout"
+                android:background="@drawable/edit"
+                android:backgroundTint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_alignParentEnd="true"
+                android:hapticFeedbackEnabled="true"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/logout"
+                android:backgroundTint="@color/grey" />
+
+        </RelativeLayout>
+        </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/profilecircle"
@@ -61,20 +74,11 @@
                 android:id="@+id/profilename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text=""
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/lato"
-                android:text="Chris"
                 android:textSize="20dp" />
-
-<!--            <ImageView-->
-<!--                android:layout_width="20dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:layout_alignBottom="@id/profilename"-->
-<!--                android:layout_marginBottom="2dp"-->
-<!--                android:layout_marginLeft="15dp"-->
-<!--                android:layout_toRightOf="@id/profilename"-->
-<!--                android:background="@drawable/edit" />-->
 
 
         </RelativeLayout>

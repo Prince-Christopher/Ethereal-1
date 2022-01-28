@@ -28,6 +28,7 @@
                 <ImageButton
                     android:id="@+id/botback"
                     android:layout_width="25dp"
+                    android:hapticFeedbackEnabled="true"
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/back"
@@ -97,12 +98,13 @@
             android:textSize="15dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_marginTop="10dp"
             android:id="@+id/botsendmessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:hapticFeedbackEnabled="true"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/send"
             app:backgroundTint="@color/pale_pink"

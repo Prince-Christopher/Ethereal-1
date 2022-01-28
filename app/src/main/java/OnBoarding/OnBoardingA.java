@@ -1,6 +1,7 @@
 package OnBoarding;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.example.ethereal.Activities.BreatheActivity;
@@ -26,6 +29,7 @@ public class OnBoardingA extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_on_boarding_a, container, false);
+
 
         skiptomain1 = view.findViewById(R.id.skiptomain1);
         skiptomain1.setOnClickListener(new View.OnClickListener() {

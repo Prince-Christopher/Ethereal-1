@@ -14,8 +14,6 @@ import com.example.ethereal.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Moods;
-
 public class MoodsFragment extends Fragment {
 
 

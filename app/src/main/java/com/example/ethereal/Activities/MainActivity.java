@@ -4,21 +4,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
 
 import com.example.ethereal.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import Fragments.HomeFragment;
 import Fragments.ProfileFragment;
-import Fragments.TasksFragment;
+import Fragments.ActivitiesFragment;
 import Fragments.TherapistsFragment;
 import io.github.muddz.styleabletoast.StyleableToast;
 
@@ -50,11 +52,22 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
 
+
+        if (savedInstanceState == null){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
+            fragmentTransaction.commit();
+        }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
+            View decor = getWindow().getDecorView();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 window.setStatusBarColor(getColor(R.color.dark_grey));
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                decor.setSystemUiVisibility(0);
             }
         }
 
@@ -69,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         selectorFragment = new HomeFragment();
                         break;
                     case R.id.tasks:
-                        selectorFragment = new TasksFragment();
+                        selectorFragment = new ActivitiesFragment();
                         break;
                     case R.id.nancy:
                         selectorFragment = null;

@@ -62,9 +62,11 @@ public class NancyActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
+            View decor = getWindow().getDecorView();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.setStatusBarColor(getColor(R.color.dark_grey));
+                window.setStatusBarColor(getColor(R.color.lavender));
+                decor.setSystemUiVisibility(0);
             }
         }
 

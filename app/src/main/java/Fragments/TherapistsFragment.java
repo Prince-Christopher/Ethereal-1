@@ -19,5 +19,8 @@ public class TherapistsFragment extends Fragment {
         // Inflate the layout for this fragment
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         return inflater.inflate(R.layout.fragment_therapists, container, false);
+
+
+
     }
 }

@@ -19,5 +19,7 @@
 
     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Ethereal</string>
     <string name="quote">"It's okay to be less than perfect."</string>
+    <string name="actidesc">"Things you can do to boost your mental state are referred to as mental health activities. Collaborating in mental health activities can improve your overall health, well-being and as well as your sense of inner peace."</string>
+    <string name="mediactidesc">"If stress has you anxious, tense and worried, consider trying meditation. Spending even a few minutes in meditation can restore your calm and inner peace."</string>
+    <string name="healthactisdesc">Mental health is vital to overall personal wellness. It\'s our emotional psychological and social well-being. Here are some health courses that can help to improve your overall psychological well-being.</string>
     <string name="forgotdesc">"We will send an email to your registered ID with \ninstructions to reset your password."</string>
     <string name="therapistquote">"The role of the therapist is to reflect the being/accepting self\n that was never allowed to be in the borderline."\n― Michael Adzema."</string>
     <string name="i_already"><u>I already have an account</u></string>
