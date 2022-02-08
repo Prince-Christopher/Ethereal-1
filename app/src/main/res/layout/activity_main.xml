@@ -7,12 +7,21 @@
     tools:context=".Activities.MainActivity">
 
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragment_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@id/bottomNavigationView"/>-->
+
+
+    <fragment
+        android:id="@+id/fragmentcontainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigationView"/>
-
+        android:layout_above="@id/bottomNavigationView"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -28,9 +37,9 @@
         android:background="@drawable/bottomnav"
         android:elevation="2dp"
         app:itemIconSize="30dp"
-        app:itemTextColor="@color/nav_color"
         app:itemIconTint="@color/nav_color"
         app:itemRippleColor="@android:color/transparent"
+        app:itemTextColor="@color/nav_color"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu" />
 

@@ -30,7 +30,6 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.Ac
 
     @Override
     public void onBindViewHolder(@NonNull ActivitiesViewHolder holder, int position) {
-
         ActivitiesHelperClass activitiesHelperClass = activities.get(position);
         holder.image.setImageResource(activitiesHelperClass.getImage());
         holder.title.setText(activitiesHelperClass.getTitle());

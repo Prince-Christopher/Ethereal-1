@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginTop="@dimen/thirty_dp"
+    android:backgroundTint="@color/pale_lavender"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgtherapist"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/therapistname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/imgtherapist"
+            android:fontFamily="@font/lato_bold"
+            android:text=""
+            android:textColor="@color/dark_lavender"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/therapistemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/therapistname"
+            android:text=""
+            android:textSize="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/lato"
+            android:textColor="@color/dark_lavender"
+            android:layout_toRightOf="@id/imgtherapist"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/pale_pink"
+            android:backgroundTint="@color/pale_pink"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BOOK"
+                android:textColor="@color/dark_lavender"
+                android:textSize="18dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

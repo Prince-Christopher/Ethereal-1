@@ -2,4 +2,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="design_bottom_navigation_height" tools:override="true">63dp</dimen>
     <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="thirty_dp">30dp</dimen>
 </resources>

@@ -7,7 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -51,7 +53,6 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-
 
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         profileId = fUser.getUid();

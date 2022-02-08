@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Build;
@@ -52,13 +56,18 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
 
+//        final NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentcontainer);
+//        final NavController navController = navHostFragment.getNavController();
+        NavController navController = Navigation.findNavController(this, R.id.fragmentcontainer);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-        if (savedInstanceState == null){
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
-            fragmentTransaction.commit();
-        }
+//        if (savedInstanceState == null){
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
+//            fragmentTransaction.commit();
+//        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -72,38 +81,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.home:
-                        selectorFragment = new HomeFragment();
-                        break;
-                    case R.id.tasks:
-                        selectorFragment = new ActivitiesFragment();
-                        break;
-                    case R.id.nancy:
-                        selectorFragment = null;
-                        startActivity(new Intent(MainActivity.this, NancyActivity.class));
-                        break;
-                    case R.id.therapists:
-                        selectorFragment = new TherapistsFragment();
-                        break;
-                    case R.id.profile:
-                        selectorFragment = new ProfileFragment();
-                        break;
-                }
-                if (selectorFragment != null)
-                {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectorFragment).commit();
-                }
-                return true;
-            }
-
-        });
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+//        bottomNavigationView.setSelectedItemId(R.id.home);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                switch (menuItem.getItemId()) {
+//                    case R.id.home:
+//                        selectorFragment = new HomeFragment();
+//                        break;
+//                    case R.id.tasks:
+//                        selectorFragment = new ActivitiesFragment();
+//                        break;
+//                    case R.id.nancy:
+//                        selectorFragment = null;
+//                        startActivity(new Intent(MainActivity.this, NancyActivity.class));
+//                        break;
+//                    case R.id.therapists:
+//                        selectorFragment = new TherapistsFragment();
+//                        break;
+//                    case R.id.profile:
+//                        selectorFragment = new ProfileFragment();
+//                        break;
+//                }
+//                if (selectorFragment != null)
+//                {
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectorFragment).commit();
+//                }
+//                return true;
+//            }
+//
+//        });
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
 }

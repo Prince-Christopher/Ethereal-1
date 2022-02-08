@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,7 @@ import com.example.ethereal.HelperClasses.ActivitiesHealthAdapter;
 import com.example.ethereal.HelperClasses.ActivitiesMediAdapter;
 import com.example.ethereal.HelperClasses.MeditationAdapter;
 import com.example.ethereal.R;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,7 @@ public class ActivitiesFragment extends Fragment {
 
     List<Meditation> medi;
     List<Health> health;
+    MaterialCardView activitiesback;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +36,13 @@ public class ActivitiesFragment extends Fragment {
         // Inflate the layout for this fragment
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         View view = inflater.inflate(R.layout.fragment_activities, container, false);
+        activitiesback = view.findViewById(R.id.activitiesback);
+        activitiesback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_activitiesFragment_to_homeFragment);
+            }
+        });
         medi = new ArrayList<>();
         medi.add(new Meditation("Mindful Meditation", "10 mins.", R.drawable.mediactivity1));
         medi.add(new Meditation("Guided Meditation", "30 mins.", R.drawable.mediactivity2));

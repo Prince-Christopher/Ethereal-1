@@ -12,39 +12,53 @@
         android:orientation="vertical">
 
 
-        <LinearLayout
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:elevation="0dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
 
-            <ImageView
-                android:id="@+id/edit"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:hapticFeedbackEnabled="true"
-                android:layout_marginTop="27dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toLeftOf="@id/logout"
-                android:background="@drawable/edit"
-                android:backgroundTint="@color/grey" />
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_centerVertical="true"
+                    android:hapticFeedbackEnabled="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toLeftOf="@id/logout"
+                    android:background="@drawable/edit"
+                    android:backgroundTint="@color/grey" />
 
-            <ImageView
-                android:id="@+id/logout"
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_alignParentEnd="true"
-                android:hapticFeedbackEnabled="true"
-                android:layout_marginTop="27dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/logout"
-                android:backgroundTint="@color/grey" />
+                <ImageView
+                    android:id="@+id/logout"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_alignParentEnd="true"
+                    android:hapticFeedbackEnabled="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/logout"
+                    android:backgroundTint="@color/grey" />
 
-        </RelativeLayout>
-        </LinearLayout>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/profilecircle"
