@@ -42,7 +42,7 @@ public class BreatheActivity extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(BreatheActivity.this, MainActivity.class);
+                Intent i = new Intent(BreatheActivity.this, HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
@@ -56,7 +56,7 @@ public class BreatheActivity extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(BreatheActivity.this, MainActivity.class);
+                Intent i = new Intent(BreatheActivity.this, HomeActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);

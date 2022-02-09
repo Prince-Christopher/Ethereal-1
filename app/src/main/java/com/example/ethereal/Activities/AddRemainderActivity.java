@@ -41,10 +41,17 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import Fragments.ProfileFragment;
 import io.github.muddz.styleabletoast.StyleableToast;
 
+
+
 public class AddRemainderActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     public MaterialCardView remainderback;
 //    private AppCompatSpinner spinner_goals;

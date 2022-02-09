@@ -16,7 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.cuberto.liquid_swipe.LiquidPager;
-import com.example.ethereal.Activities.MainActivity;
+import com.example.ethereal.Activities.HomeActivity;
 import com.example.ethereal.R;
 
 public class OnBoardingActivity extends AppCompatActivity {
@@ -61,7 +61,7 @@ public class OnBoardingActivity extends AppCompatActivity {
     }
     public void moveToMain(){
         // use an intent to travel from one activity to another.
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 }

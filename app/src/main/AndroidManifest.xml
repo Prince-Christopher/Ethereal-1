@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ethereal">
-
+    
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,17 +13,38 @@
         android:theme="@style/Theme.Ethereal"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Activities.ViewGoalsActivity"
+            android:name=".Activities.ChildHelplinesActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activities.CrisisHelplinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.TherapistsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ActivitiesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.ViewGoalsActivity"
+            android:exported="true" />
         <activity
             android:name=".Activities.NotificationMessage"
             android:exported="false" />
         <activity
             android:name=".Activities.AddRemainderActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Activities.EditActivity"
-            android:exported="false"
+            android:exported="true"
             android:launchMode="singleTop" />
         <activity
             android:name=".Activities.CheckActivity"
@@ -53,10 +74,6 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".Activities.NancyActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".Activities.MainActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <activity

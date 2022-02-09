@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Fragments.HomeFragment">
+    tools:context=".Activities.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -40,11 +40,37 @@
 
                 </RelativeLayout>
 
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="50dp"
+                    android:id="@+id/soscard"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_toLeftOf="@id/bell"
+                    android:hapticFeedbackEnabled="true"
+                    android:backgroundTint="@color/pale_grey"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="120dp"
+                    app:strokeColor="@color/angryred"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lato"
+                        android:text="SOS"
+                        android:textColor="@color/angryred" />
+
+                </com.google.android.material.card.MaterialCardView>
+
                 <ImageButton
+                    android:id="@+id/bell"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/notifications"
                     android:hapticFeedbackEnabled="true"
@@ -56,6 +82,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_above="@id/bottomNavigationView"
         android:layout_height="match_parent"
         android:layout_below="@id/appbar">
 
@@ -158,16 +185,16 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/myschedule"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="17dp"
-                        android:layout_marginTop="25dp"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="My Schedule"
-                        android:textColor="@color/grey"
-                        android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/myschedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="My Schedule"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
 
 
                 <LinearLayout
@@ -191,52 +218,52 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:orientation="horizontal">
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:id="@+id/addgoalcard"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="20dp"
-                    android:hapticFeedbackEnabled="true"
-                    android:backgroundTint="@color/white"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:elevation="0dp"
-                    app:cardCornerRadius="120dp"
-                    app:strokeColor="@color/lavender"
-                    app:strokeWidth="1dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
+                        android:id="@+id/addgoalcard"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:hapticFeedbackEnabled="true"
+                        android:backgroundTint="@color/white"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:elevation="0dp"
+                        app:cardCornerRadius="120dp"
+                        app:strokeColor="@color/lavender"
+                        app:strokeWidth="1dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="+ ADD GOAL"
-                        android:textColor="@color/lavender" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="+ ADD GOAL"
+                            android:textColor="@color/lavender" />
 
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:id="@+id/viewgoalcard"
-                    android:layout_height="50dp"
-                    android:hapticFeedbackEnabled="true"
-                    android:backgroundTint="@color/white"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:elevation="0dp"
-                    app:cardCornerRadius="120dp"
-                    app:strokeColor="@color/lavender"
-                    app:strokeWidth="1dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="150dp"
+                        android:id="@+id/viewgoalcard"
+                        android:layout_height="50dp"
+                        android:hapticFeedbackEnabled="true"
+                        android:backgroundTint="@color/white"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:elevation="0dp"
+                        app:cardCornerRadius="120dp"
+                        app:strokeColor="@color/lavender"
+                        app:strokeWidth="1dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="VIEW GOALS"
-                        android:textColor="@color/lavender" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="VIEW GOALS"
+                            android:textColor="@color/lavender" />
 
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
             </LinearLayout>
@@ -398,12 +425,12 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
-                        <ImageView
-                            android:id="@+id/therapisthome"
-                            android:layout_width="130dp"
-                            android:layout_height="200dp"
-                            android:layout_gravity="center_vertical"
-                            android:background="@drawable/therapisthome"/>
+                            <ImageView
+                                android:id="@+id/therapisthome"
+                                android:layout_width="130dp"
+                                android:layout_height="200dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/therapisthome"/>
 
                             <TextView
                                 android:id="@+id/gettherapist"
@@ -473,5 +500,25 @@
             </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/design_bottom_navigation_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottomnav"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/nav_color"
+        app:itemRippleColor="@color/mild_pink"
+        app:itemTextColor="@color/nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu" />
 
 </RelativeLayout>

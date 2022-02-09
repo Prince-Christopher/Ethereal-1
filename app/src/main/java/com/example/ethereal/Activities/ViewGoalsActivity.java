@@ -3,6 +3,7 @@ package com.example.ethereal.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,12 @@ public class ViewGoalsActivity extends AppCompatActivity {
     AlarmEventAdapter alarmEventAdapter;
     MaterialCardView allgoalsback;
     DatabaseClass dbclass;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

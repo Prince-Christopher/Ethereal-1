@@ -7,6 +7,9 @@
     <string name="forgotdesc">"We will send an email to your registered ID with \ninstructions to reset your password."</string>
     <string name="therapistquote">"The role of the therapist is to reflect the being/accepting self\n that was never allowed to be in the borderline."\n― Michael Adzema."</string>
     <string name="i_already"><u>I already have an account</u></string>
+    <string name="crisis">Are you in crisis?</string>
+    <string name="panictext">You are not alone. Help is just a\ncall away.</string>
+    <string name="panicdesc">If you are dealing with abuse, trauma or crisis, Ethereal is not enough. It is important that you talk to a person you feel safe sharing what you are dealing with. If there is no one, call one of the helplines below. Things will get better.</string>
     <string name="health_points">Based on your overall health test,\npoints you have secured is 84.</string>
     <string name="welcomedesc1">Get help with common mental health\nproblems such as stress, anxiety, depression\nand panic attacks. In a safer space.</string>
     <string name="welcomedesc2">Discover and plan the activities that you find\nmost useful. We will remind you beforehand\nand help you self-reflect afterwards.</string>
