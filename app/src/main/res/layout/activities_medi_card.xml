@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/medicard"
     android:layout_width="150dp"
     app:cardCornerRadius="10dp"
-
     android:paddingEnd="30dp"
     android:layout_height="200dp"
     app:cardBackgroundColor="@color/tangerine"
@@ -14,7 +13,7 @@
     
     <RelativeLayout
         android:layout_width="match_parent"
-        android:clickable="true"
+        android:id="@+id/medirl"
         android:foreground="?android:attr/selectableItemBackground"
         android:layout_height="match_parent"
         android:orientation="vertical">

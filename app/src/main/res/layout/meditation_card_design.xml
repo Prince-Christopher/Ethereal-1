@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="230dp"
+    android:id="@+id/medicardhome"
     android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_marginEnd="9dp"
     android:layout_marginStart="9dp"
-    android:backgroundTint="@color/pale_yellow"
+    android:backgroundTint="@color/tangerine"
     app:cardElevation="0dp">
 
     <LinearLayout
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:textColor="@color/white"
         android:layout_marginStart="10dp"
         android:fontFamily="@font/lato_bold"
         android:textSize="15dp"/>
@@ -26,6 +28,7 @@
     <TextView
         android:id="@+id/mediddesc1"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_bold"
         android:textSize="10dp"

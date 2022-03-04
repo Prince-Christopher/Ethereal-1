@@ -16,11 +16,22 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.example.ethereal.R;
 import com.google.android.material.card.MaterialCardView;
 
-public class BreatheActivity extends AppCompatActivity {
+import android.view.View;
 
+public class BreatheActivity extends AppCompatActivity {
+    Handler handler;
+    Runnable runnable;
     LottieAnimationView breathe;
     MaterialCardView skip;
     Animation anim;
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,33 +47,22 @@ public class BreatheActivity extends AppCompatActivity {
         }
         breathe = findViewById(R.id.breathe);
         breathe.playAnimation();
-        anim = AnimationUtils.loadAnimation(this,R.anim.transition_anim);
+        anim = AnimationUtils.loadAnimation(this, R.anim.transition_anim);
         breathe.startAnimation(anim);
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(BreatheActivity.this, MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(i);
-                overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
-                finish();
+        handler = new Handler();
+        runnable = () ->
+        {   Intent i = new Intent(BreatheActivity.this, HomeActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(i);
+            overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
+            finish();
 
-            }
         };
-        handler.postDelayed(runnable, 10000);
-        handler.removeCallbacks(runnable);
+        handler.postDelayed(runnable, 5000);
         skip = findViewById(R.id.skip);
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(BreatheActivity.this, MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(i);
-                overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
-                finish();
-            }
+        skip.setOnClickListener((View.OnClickListener) v ->
+        {
+            runnable.run();
         });
 
-    }
-}
+    }}

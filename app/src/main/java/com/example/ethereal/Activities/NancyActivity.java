@@ -23,7 +23,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-import Fragments.HomeFragment;
 import Model.Chats;
 import Model.Message;
 import io.github.muddz.styleabletoast.StyleableToast;
@@ -47,9 +46,10 @@ public class NancyActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent j = new Intent(NancyActivity.this, MainActivity.class);
-        startActivity(j);
         super.onBackPressed();
+        Intent j = new Intent(NancyActivity.this, HomeActivity.class);
+        startActivity(j);
+
     }
 
     @Override
@@ -83,7 +83,7 @@ public class NancyActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(NancyActivity.this, MainActivity.class);
+                Intent i = new Intent(NancyActivity.this, HomeActivity.class);
                 startActivity(i);
             }
         });

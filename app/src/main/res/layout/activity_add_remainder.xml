@@ -1,234 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-
-    <RelativeLayout
+<!--//change to relative layout later-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/remainderback"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:cardCornerRadius="100dp"
-            android:layout_marginStart="15dp"
-            app:cardElevation="0dp"
-            android:backgroundTint="@color/pale_grey"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="17dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:background="@drawable/back"
-                android:backgroundTint="@color/grey"
-                android:layout_gravity="center"/>
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/remainderback"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/remainderback"
-            android:fontFamily="@font/lato_bold"
-            android:text="Set Goals"
-            android:textColor="@color/grey"
-            android:textSize="18dp" />
+            app:elevation="0dp"
+            android:elevation="0dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:elevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/remainderback"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:backgroundTint="@color/pale_grey"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="100dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/back"
+                                android:backgroundTint="@color/grey" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_toRightOf="@id/remainderback"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:text="Set Goals"
+                            android:textColor="@color/grey"
+                            android:textSize="18dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+<!--ethereal goals card functionality not found for spinner yet-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/etherealgoalcard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_below="@id/appbar"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            app:cardCornerRadius="4dp"-->
+<!--            app:cardElevation="2dp"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            app:contentPadding="@dimen/sixteen_dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/etherealgoalstv"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="3dp"-->
+<!--                    android:fontFamily="@font/lato"-->
+<!--                    android:text="Ethereal Goals"-->
+<!--                    android:textColor="@color/grey" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:id="@+id/spinner_goals"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_below="@id/etherealgoalstv"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_marginStart="-5dp"-->
+<!--                    android:layout_marginLeft="8dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:entries="@array/ethereal_goals_array"-->
+<!--                    android:spinnerMode="dialog" />-->
+
+<!--            </RelativeLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/namecard"
-            android:layout_below="@id/remainderback"
+            android:id="@+id/personalgoalcard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/appbar"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
             app:cardCornerRadius="4dp"
             app:cardElevation="2dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
             app:cardUseCompatPadding="true"
             app:contentPadding="@dimen/sixteen_dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Goal Name"
-                    android:layout_marginStart="3dp"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/lato" />
-
-                <EditText
-                    android:id="@+id/edit_med_name"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Enter your goal"
-                    android:textSize="15dp"
-                    android:backgroundTint="@color/lavender"
-                    android:textColorHint="@color/lavender"
-                    android:textColor="@color/lavender"
-                    android:fontFamily="@font/lato"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/schedulecard"
-            android:layout_below="@id/namecard"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="2dp"
-            app:cardUseCompatPadding="true"
-            app:contentPadding="@dimen/sixteen_dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Schedule Days"
-                    android:layout_marginStart="3dp"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/lato" />
-
-
-                <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/every_day"
+                    android:id="@+id/setgoaltv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/grey"
-                    android:fontFamily="@font/lato_bold"
-                    android:layout_marginStart="-3dp"
-                    android:text="Every Day" />
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/lato"
+                    android:text="Set Your Personal Goal"
+                    android:textColor="@color/grey" />
 
-                <LinearLayout
-                    android:id="@+id/checkbox_layout"
+                <EditText
+                    android:id="@+id/edit_custom_goal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="7">
+                    android:layout_below="@id/setgoaltv"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="25dp"
+                    android:backgroundTint="@color/lavender"
+                    android:fontFamily="@font/lato"
+                    android:hint="Enter your goal"
+                    android:textColor="@color/lavender"
+                    android:textColorHint="@color/lavender"
+                    android:textSize="15dp" />
 
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_sunday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:textColor="@color/grey"
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="S" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/record"
+                    android:layout_alignParentEnd="true"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/record"
+                    android:layout_alignBottom="@id/edit_custom_goal"
+                    android:backgroundTint="@color/lavender"/>
 
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_monday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="M" />
-
-
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_tuesday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="T" />
-
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_wednesday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="W" />
-
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_thursday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="T" />
-
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_friday"
-                        android:layout_width="40dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_height="40dp"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="F" />
-
-
-                    <com.example.ethereal.views.DayViewCheckBox
-                        android:id="@+id/dv_saturday"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:textColor="@color/grey"
-
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/background_day_view"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:text="S" />
-                </LinearLayout>
-            </LinearLayout>
-
+            </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
+<!--schedule days (everyday) functionality not found yet-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/schedulecard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_below="@id/personalgoalcard"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            app:cardCornerRadius="4dp"-->
+<!--            app:cardElevation="2dp"-->
+<!--            app:cardUseCompatPadding="true"-->
+<!--            app:contentPadding="@dimen/sixteen_dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="3dp"-->
+<!--                    android:fontFamily="@font/lato"-->
+<!--                    android:text="Schedule Days"-->
+<!--                    android:textColor="@color/grey" />-->
+
+
+<!--                <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--                    android:id="@+id/every_day"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="-3dp"-->
+<!--                    android:fontFamily="@font/lato_bold"-->
+<!--                    android:text="Every Day"-->
+<!--                    android:textColor="@color/grey" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/checkbox_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:weightSum="7">-->
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_sunday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="S"-->
+<!--                        android:textColor="@color/grey" />-->
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_monday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="M"-->
+<!--                        android:textColor="@color/grey" />-->
+
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_tuesday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="T"-->
+<!--                        android:textColor="@color/grey" />-->
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_wednesday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="W"-->
+<!--                        android:textColor="@color/grey" />-->
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_thursday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="T"-->
+<!--                        android:textColor="@color/grey" />-->
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_friday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+
+<!--                        android:layout_margin="4dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="F"-->
+<!--                        android:textColor="@color/grey" />-->
+
+
+<!--                    <com.example.ethereal.views.DayViewCheckBox-->
+<!--                        android:id="@+id/dv_saturday"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="38dp"-->
+<!--                        android:layout_margin="4dp"-->
+
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/background_day_view"-->
+<!--                        android:button="@null"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="S"-->
+<!--                        android:textColor="@color/grey" />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:id="@+id/remaindercard"
-            android:layout_below="@id/schedulecard"
+            android:layout_below="@id/edit_custom_goal"
             android:layout_height="100dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
@@ -259,42 +346,52 @@
                     android:layout_marginStart="4dp">
 
                     <TextView
-                        android:id="@+id/tv_medicine_time"
+                        android:id="@+id/tv_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
                         android:background="@drawable/drawable_underline"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:padding="4dp"
-                        android:fontFamily="@font/lato_bold"
+                        android:textColorHint="@color/lavender"
+                        android:fontFamily="@font/lato"
                         android:textColor="@color/lavender"
-                        tools:text="23:30" />
+                        android:hint="Date" />
 
                     <TextView
-                        android:id="@+id/tv_dose_quantity"
+                        android:id="@+id/tv_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginStart="8dp"
-                        android:layout_weight="1.5"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/lavender"
+                        android:fontFamily="@font/lato"
                         android:textColor="@color/lavender"
                         android:background="@drawable/drawable_underline"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:padding="4dp"
-                        android:text="1.0" />
+                        android:hint="Time" />
 
-
-                    <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/spinner_dose_units"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_weight="1"
-                        android:entries="@array/medications_shape_array" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/setgoal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/remaindercard"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/roundedcircle"
+            android:padding="10dp"
+            android:text="SET GOAL"
+            android:textSize="15dp"
+            app:backgroundTint="@color/lavender" />
+    </LinearLayout>
+</RelativeLayout>

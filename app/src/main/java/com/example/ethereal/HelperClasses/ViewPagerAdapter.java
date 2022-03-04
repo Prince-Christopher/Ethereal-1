@@ -10,39 +10,34 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
+import Fragments.JournalFragment;
+import Fragments.MoodsFragment;
+import Fragments.NotificationsFragment;
+
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-
-    private final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-    private final ArrayList<String> fragmentTitle = new ArrayList<>();
+    int tabcount;
 
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
-    }
-
-    public ViewPagerAdapter(FragmentManager childFragmentManager) {
-        super(childFragmentManager);
+        tabcount = behavior;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return fragmentArrayList.get(position);
+        switch (position)
+        {
+            case 0: return new MoodsFragment();
+            case 1: return new NotificationsFragment();
+            case 2: return new JournalFragment();
+            default: return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return fragmentArrayList.size();
+        return tabcount;
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return fragmentTitle.get(position);
-
-    }
-    public void addFragment(Fragment fragment, String title){
-        fragmentArrayList.add(fragment);
-        fragmentTitle.add(title);
-    }
 }

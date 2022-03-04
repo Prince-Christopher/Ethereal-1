@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pale_pink"
+    tools:context=".Activities.SosActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/sosback"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="#08000000"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/back"
+            android:backgroundTint="@color/grey"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:id="@+id/textssos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/crisis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/crisis"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/panictext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/crisis"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="@string/panictext"
+            android:textSize="25dp" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtubeplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/panictext"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            app:autoPlay="true"
+            app:videoId="NOGemNxtQcA" />
+
+        <TextView
+            android:id="@+id/panicdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/youtubeplayer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="@string/panicdesc"
+            android:textSize="13dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_below="@id/textssos"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/crisishelplinecard"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/lavender"
+            android:clickable="true"
+            android:elevation="0dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:hapticFeedbackEnabled="true"
+            app:cardCornerRadius="120dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato_bold"
+                android:text="International Crisis Helplines"
+                android:textColor="@color/pale_pink" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        <Button-->
+<!--            android:id="@+id/crisishelplinebtn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:background="@drawable/roundedcircle"-->
+<!--            android:padding="10dp"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:text="International Crisis Helplines"-->
+<!--            android:fontFamily="@font/lato_bold"-->
+<!--            android:textSize="15dp"-->
+<!--            app:backgroundTint="@color/lavender" />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/childhelplinecard"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/crisishelplinecard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/lavender"
+            android:clickable="true"
+            android:elevation="0dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:hapticFeedbackEnabled="true"
+            app:cardCornerRadius="120dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato_bold"
+                android:text="International Child Helplines"
+                android:textColor="@color/pale_pink" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

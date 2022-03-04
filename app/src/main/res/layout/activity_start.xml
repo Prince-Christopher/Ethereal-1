@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activities.StartActivity"
     android:background="@color/pale_pink">
-
     <TextView
         android:id="@+id/logo"
         android:layout_width="wrap_content"

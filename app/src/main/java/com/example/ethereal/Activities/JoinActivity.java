@@ -152,7 +152,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
                                 progressBar.setVisibility(View.GONE);
 
                                 if (user.isEmailVerified()) {
-                                    startActivity(new Intent(JoinActivity.this, MainActivity.class));
+                                    startActivity(new Intent(JoinActivity.this, HomeActivity.class));
                                 }
                                 else {
                                     user.sendEmailVerification();

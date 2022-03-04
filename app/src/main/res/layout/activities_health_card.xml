@@ -5,6 +5,7 @@
     android:layout_width="150dp"
     app:cardCornerRadius="10dp"
     android:layout_height="200dp"
+    android:id="@+id/healthcard"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardBackgroundColor="@color/aqua"
