@@ -1,5 +1,6 @@
 package com.example.ethereal.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +12,13 @@ import android.view.WindowManager;
 
 import com.example.ethereal.R;
 import com.google.android.material.card.MaterialCardView;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class SosActivity extends AppCompatActivity {
+
+//    YouTubePlayerView youTubePlayerView;
 
     @Override
     public void onBackPressed() {
@@ -57,6 +63,16 @@ public class SosActivity extends AppCompatActivity {
                     startActivity(i);
                 }
             });
+//            youTubePlayerView = findViewById(R.id.youtubeplayer);
+//            getLifecycle().addObserver(youTubePlayerView);
+//            youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+//                @Override
+//                public void onApiChange(@NonNull YouTubePlayer youTubePlayer) {
+//                    super.onApiChange(youTubePlayer);
+//                    String id="https://www.youtube.com/watch?v=NOGemNxtQcA&ab_channel=PsychHub";
+//                    youTubePlayer.loadVideo(id, 0);
+//                }
+//            });
         }
     }
 }

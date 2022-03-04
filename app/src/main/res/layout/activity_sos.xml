@@ -56,15 +56,25 @@
             android:text="@string/panictext"
             android:textSize="25dp" />
 
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtubeplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/panictext"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            app:autoPlay="true"
+            app:videoId="NOGemNxtQcA" />
 
         <TextView
             android:id="@+id/panicdesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/panictext"
+            android:layout_below="@id/youtubeplayer"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/lato"
             android:gravity="center"
@@ -76,6 +86,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_below="@id/textssos"
+        android:layout_alignParentBottom="true"
         android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
@@ -84,7 +95,7 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
             android:backgroundTint="@color/lavender"
             android:clickable="true"

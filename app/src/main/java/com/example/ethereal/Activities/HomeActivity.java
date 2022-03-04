@@ -126,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Intent j = new Intent(HomeActivity.this, ActivitiesActivity.class);
+                    Intent j = new Intent(HomeActivity.this, TherapistsActivity.class);
                     startActivity(j);
 //                Fragment fragment = new HomeFragment();
 //                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
@@ -204,9 +204,9 @@ public class HomeActivity extends AppCompatActivity {
         private void medichant_recycler() {
 
             ArrayList<MeditationHelperClass> meditationChants = new ArrayList<>();
-            meditationChants.add(new MeditationHelperClass(R.drawable.meditation_3, "Relaxation Meditation", "1 hour."));
-            meditationChants.add(new MeditationHelperClass(R.drawable.meditation_2, "Guided Meditation", "30 mins."));
-            meditationChants.add(new MeditationHelperClass(R.drawable.meditation_1, "Mindful Meditation", "10 mins."));
+            meditationChants.add(new MeditationHelperClass(R.drawable.mediactivity3, "Relaxation Meditation", "1 hour."));
+            meditationChants.add(new MeditationHelperClass(R.drawable.mediactivity2, "Guided Meditation", "30 mins."));
+            meditationChants.add(new MeditationHelperClass(R.drawable.mediactivity1, "Mindful Meditation", "10 mins."));
 
             mediadapter = new MeditationAdapter(meditationChants);
             medichant_recycler.setAdapter(mediadapter);

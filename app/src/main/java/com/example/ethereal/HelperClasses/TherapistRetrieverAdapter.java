@@ -1,6 +1,7 @@
 package com.example.ethereal.HelperClasses;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ethereal.Activities.MeditationPlayerActivity;
 import com.example.ethereal.R;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -38,6 +41,12 @@ public class TherapistRetrieverAdapter extends RecyclerView.Adapter<TherapistRet
         Therapist therapist = list.get(position);
         holder.name.setText(therapist.getName());
         holder.email.setText(therapist.getEmail());
+//        holder.therapistscard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                v.getContext().startActivity(new Intent(v.getContext(), MeditationPlayerActivity.class));
+//            }
+//        });
     }
 
     @Override
@@ -47,10 +56,12 @@ public class TherapistRetrieverAdapter extends RecyclerView.Adapter<TherapistRet
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
         TextView name,email;
+//        MaterialCardView therapistscard;
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             name=itemView.findViewById(R.id.therapistname);
             email=itemView.findViewById(R.id.therapistemail);
+//            therapistscard=itemView.findViewById(R.id.therapistscard);
         }
     }
 }

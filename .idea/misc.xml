@@ -27,10 +27,13 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/nancy_cursor.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/nancynav.xml" value="0.22602739726027396" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/onboard_bg.xml" value="0.17037037037037037" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/pause.xml" value="0.16" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/play.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/profile.xml" value="0.15902777777777777" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedcircle.xml" value="0.2578125" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/scroll_bg.xml" value="0.136" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/scroll_bg_full.xml" value="0.1495" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/seek_arc_control_selector.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/send.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/tasks.xml" value="0.22602739726027396" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activities_acti_card.xml" value="0.14234234234234233" />
@@ -39,23 +42,24 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activities_health_card.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activities_medi_card.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_activities.xml" value="0.209009009009009" />
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_add_remainder.xml" value="0.536" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_add_remainder.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_breathe.xml" value="0.12" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_check.xml" value="0.15263157894736842" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_child_helplines.xml" value="0.19684684684684683" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_crisis_helplines.xml" value="0.209009009009009" />
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_edit.xml" value="0.2" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_edit.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_forgot.xml" value="0.2" />
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_join.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_meditation_player.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_nancy.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_notification_message.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_on_boarding.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_paper_onboarding.xml" value="0.18568840579710144" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_profile.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_signin.xml" value="0.21481481481481482" />
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_sos.xml" value="0.264" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_sos.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_splash.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_start.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_therapists.xml" value="0.209009009009009" />

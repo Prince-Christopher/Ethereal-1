@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.CookieManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -31,10 +32,12 @@ public class CrisisHelplinesActivity extends AppCompatActivity {
                 getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             }
         }
+
         crisishelplinewv = findViewById(R.id.crisishelplinewv);
         crisishelplinewv.setWebViewClient(new WebViewClient());
         crisishelplinewv.loadUrl("https://www.opencounseling.com/suicide-hotlines");
-
+        crisishelplinewv.clearCache(true);
+        clearCookies();
         WebSettings webSettings = crisishelplinewv.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
@@ -53,6 +56,12 @@ public class CrisisHelplinesActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public static void clearCookies()
+    {
+        CookieManager.getInstance().removeAllCookies(null);
+        CookieManager.getInstance().flush();
     }
 
 

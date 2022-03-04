@@ -22,8 +22,15 @@ public class SplashActivity extends AppCompatActivity {
 
     Animation anim;
     ImageView nancysplash;
+    Handler handler;
+    Runnable runnable;
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +56,17 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        handler = new Handler();
+        runnable = () ->
+            {
                 Intent i = new Intent(SplashActivity.this, CheckActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);
                 finish();
-            }
-        }, 3000);
+            };
+        handler.postDelayed(runnable, 3000);
+
 
     }
 }
