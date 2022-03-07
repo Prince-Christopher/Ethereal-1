@@ -1,52 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="Fragments.MoodsFragment">
+    tools:context=".Activities.InsightsActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:elevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/insightsback"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="100dp"
+                    app:cardElevation="0dp"
+                    android:backgroundTint="@color/pale_grey"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/back"
+                        android:backgroundTint="@color/grey"
+                        android:layout_gravity="center"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/insightsback"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:gravity="center"
+                    android:text="Insights"
+                    android:textColor="@color/grey"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_below="@id/appbar">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/feeling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="31dp"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/lato"
-                android:text="How are you feeling today?"
+                android:text="Lifetime mood count"
+                android:fontFamily="@font/lato_bold"
+                android:layout_marginStart="15dp"
                 android:textColor="@color/grey"
-                android:textSize="15dp" />
-
-            <ImageView
-                android:id="@+id/insights"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_below="@id/feeling"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/chart"
-                android:backgroundTint="@color/grey"
-                android:hapticFeedbackEnabled="true" />
-
+                android:layout_marginTop="30dp"
+                android:textSize="16dp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/moods"
                 android:layout_width="match_parent"
-                android:layout_height="370dp"
+                android:layout_height="900dp"
                 android:layout_below="@id/feeling"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="15dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/pale_grey"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="1dp">
@@ -55,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:columnCount="9"
+                    android:columnCount="2"
                     android:rowCount="9">
 
                     <com.google.android.material.card.MaterialCardView
@@ -68,7 +113,6 @@
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/happyyellow"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -81,15 +125,6 @@
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/happy"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center_vertical|center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/happyline"
-                                android:backgroundTint="@color/grey" />
-
                             <TextView
                                 android:id="@+id/happytitle"
                                 android:layout_width="wrap_content"
@@ -100,6 +135,27 @@
                                 android:text="Happy"
                                 android:textColor="@color/grey"
                                 android:textSize="12dp" />
+
+                            <ImageView
+                                android:id="@+id/happy"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/happyline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/happycount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
+                                android:textColor="@color/grey"
+                                android:textSize="15dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -113,7 +169,6 @@
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/relaxedcerulean"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -125,6 +180,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/relaxedtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Relaxed"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
 
                             <ImageView
                                 android:id="@+id/relaxed"
@@ -136,63 +202,71 @@
                                 android:backgroundTint="@color/grey" />
 
                             <TextView
-                                android:id="@+id/relaxedtitle"
+                                android:id="@+id/relaxedcount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-
-                                android:text="Relaxed"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
                                 android:textColor="@color/grey"
-                                android:textSize="12dp" />
+                                android:textSize="15dp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
-
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="0"
+                        android:layout_row="1"
                         android:id="@+id/neutralcard"
                         android:layout_rowWeight="1"
-                        android:layout_column="2"
+                        android:layout_column="0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/neutralpink"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
                         app:cardElevation="1dp"
                         app:cardUseCompatPadding="true">
 
-                        <LinearLayout
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/neutraltitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|center_vertical"
-                            android:orientation="vertical">
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/lato"
+                            android:text="Neutral"
+                            android:textColor="@color/grey"
+                            android:textSize="12dp" />
 
-                            <ImageView
-                                android:id="@+id/neutral"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center_vertical|center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/neutralline"
-                                android:backgroundTint="@color/grey" />
+                        <ImageView
+                            android:id="@+id/neutral"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/neutralline"
+                            android:backgroundTint="@color/grey" />
 
-                            <TextView
-                                android:id="@+id/neutraltitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
+                        <TextView
+                            android:id="@+id/neutralcount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="0"
+                            android:textColor="@color/grey"
+                            android:textSize="15dp" />
+                    </LinearLayout>
 
-                                android:text="Neutral"
-                                android:textColor="@color/grey"
-                                android:textSize="12dp" />
-                        </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -201,11 +275,10 @@
                         android:layout_row="1"
                         android:id="@+id/sadcard"
                         android:layout_rowWeight="1"
-                        android:layout_column="0"
+                        android:layout_column="1"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/sadpurple"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -217,15 +290,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/sad"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center_vertical|center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/sadline"
-                                android:backgroundTint="@color/grey" />
 
                             <TextView
                                 android:id="@+id/sadtitle"
@@ -238,20 +302,39 @@
                                 android:text="Sad"
                                 android:textColor="@color/grey"
                                 android:textSize="12dp" />
+
+                            <ImageView
+                                android:id="@+id/sad"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/sadline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/sadcount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
+                                android:textColor="@color/grey"
+                                android:textSize="15dp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="1"
+                        android:layout_row="2"
                         android:id="@+id/angrycard"
                         android:layout_rowWeight="1"
-                        android:layout_column="1"
+                        android:layout_column="0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/angryred"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -263,6 +346,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/angrytitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Angry"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
 
                             <ImageView
                                 android:id="@+id/angry"
@@ -274,30 +368,29 @@
                                 android:backgroundTint="@color/grey" />
 
                             <TextView
-                                android:id="@+id/angrytitle"
+                                android:id="@+id/angrycount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-
-                                android:text="Angry"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
                                 android:textColor="@color/grey"
-                                android:textSize="12dp" />
+                                android:textSize="15dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="1"
+                        android:layout_row="2"
                         android:id="@+id/fearcard"
                         android:layout_rowWeight="1"
-                        android:layout_column="2"
+                        android:layout_column="1"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/fearycyan"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -309,15 +402,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/fear"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center_vertical|center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/fearline"
-                                android:backgroundTint="@color/grey" />
 
                             <TextView
                                 android:id="@+id/feartitle"
@@ -329,20 +413,40 @@
                                 android:text="Fear"
                                 android:textColor="@color/grey"
                                 android:textSize="12dp" />
+
+                            <ImageView
+                                android:id="@+id/fear"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/fearline"
+                                android:backgroundTint="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/fearcount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
+                                android:textColor="@color/grey"
+                                android:textSize="15dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="2"
+                        android:layout_row="3"
                         android:id="@+id/proudcard"
                         android:layout_rowWeight="1"
                         android:layout_column="0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/proudtangerine"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -354,6 +458,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/proudtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Proud"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
 
                             <ImageView
                                 android:id="@+id/proud"
@@ -365,30 +480,29 @@
                                 android:backgroundTint="@color/grey" />
 
                             <TextView
-                                android:id="@+id/proudtitle"
+                                android:id="@+id/proudcount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-
-                                android:text="Proud"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
                                 android:textColor="@color/grey"
-                                android:textSize="12dp" />
+                                android:textSize="15dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="2"
+                        android:layout_row="3"
                         android:id="@+id/sickcard"
                         android:layout_rowWeight="1"
                         android:layout_column="1"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
                         android:backgroundTint="@color/sickviolet"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -400,6 +514,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/sicktitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Sick"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
 
                             <ImageView
                                 android:id="@+id/sick"
@@ -411,29 +536,28 @@
                                 android:backgroundTint="@color/grey" />
 
                             <TextView
-                                android:id="@+id/sicktitle"
+                                android:id="@+id/sickcount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-
-                                android:text="Sick"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
                                 android:textColor="@color/grey"
-                                android:textSize="12dp" />
+                                android:textSize="15dp" />
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_row="2"
+                        android:layout_row="4"
                         android:id="@+id/sillycard"
                         android:layout_rowWeight="1"
-                        android:layout_column="2"
+                        android:layout_column="0"
                         android:layout_columnWeight="1"
                         android:backgroundTint="@color/sillyred"
-                        android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:hapticFeedbackEnabled="true"
                         app:cardCornerRadius="15dp"
@@ -446,6 +570,17 @@
                             android:layout_gravity="center_horizontal|center_vertical"
                             android:orientation="vertical">
 
+                            <TextView
+                                android:id="@+id/sillytitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/lato"
+                                android:text="Silly"
+                                android:textColor="@color/grey"
+                                android:textSize="12dp" />
+
                             <ImageView
                                 android:id="@+id/silly"
                                 android:layout_width="60dp"
@@ -456,22 +591,24 @@
                                 android:backgroundTint="@color/grey" />
 
                             <TextView
-                                android:id="@+id/sillytitle"
+                                android:id="@+id/sillycount"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/lato"
-
-                                android:text="Silly"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="0"
                                 android:textColor="@color/grey"
-                                android:textSize="12dp" />
+                                android:textSize="15dp" />
+
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
+
                 </GridLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-        </RelativeLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>

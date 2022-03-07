@@ -118,8 +118,8 @@
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
         android:id="@+id/tablayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/top"
         android:layout_marginStart="10dp"
@@ -132,20 +132,20 @@
         app:tabTextColor="@color/grey">
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
             android:id="@+id/tabMood"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mood" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
             android:id="@+id/tabNotifications"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notifications" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
             android:id="@+id/tabJournal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Journal" />
     </com.google.android.material.tabs.TabLayout>

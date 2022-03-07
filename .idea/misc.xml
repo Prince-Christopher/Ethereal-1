@@ -24,6 +24,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/fadeout.xml" value="0.13055555555555556" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/ic_activities.xml" value="0.12" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22602739726027396" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/moodsdialog.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/nancy_cursor.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/nancynav.xml" value="0.22602739726027396" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/onboard_bg.xml" value="0.17037037037037037" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/play.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/profile.xml" value="0.15902777777777777" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedcircle.xml" value="0.2578125" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedrectangle.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/scroll_bg.xml" value="0.136" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/scroll_bg_full.xml" value="0.1495" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/seek_arc_control_selector.xml" value="0.16" />
@@ -50,6 +52,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_edit.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_forgot.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_insights.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_join.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_meditation_player.xml" value="0.264" />
@@ -68,7 +71,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_activities.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_journal.xml" value="0.14375" />
-        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_moods.xml" value="0.176" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_moods.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_notifications.xml" value="0.176" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_on_boarding_a.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/fragment_on_boarding_b.xml" value="0.2" />
@@ -79,6 +82,8 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/listings_row.xml" value="0.264" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/meditation_card_design.xml" value="0.176" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/moods_card_design.xml" value="0.152" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/moodsdialog.xml" value="0.2" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/moodwsdialog.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/notification_layout.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/spinner_color_layout.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/spinner_dropdown_layout.xml" value="0.209009009009009" />
