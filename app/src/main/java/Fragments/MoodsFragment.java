@@ -1,9 +1,11 @@
 package Fragments;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,19 +18,26 @@ import android.widget.ImageView;
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.ethereal.Activities.InsightsActivity;
 import com.example.ethereal.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MoodsFragment extends Fragment {
-    public int happyCounter = 0, relaxedCounter = 0, neutralCounter = 0, sadCounter = 0, angryCounter = 0, fearCounter = 0, proudCounter = 0, sickCounter = 0, sillyCounter = 0;
+    public int happyCounter, relaxedCounter, neutralCounter, sadCounter, angryCounter, fearCounter, proudCounter, sickCounter, sillyCounter;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     MaterialCardView happycard, relaxedcard, neutralcard, sadcard, angrycard, fearcard, proudcard, sickcard, sillycard;
     ImageView insights;
+    String hCounter, rCounter, nCounter, sCounter, aCounter, fCounter, pCounter, sicCounter, silCounter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,34 +47,6 @@ public class MoodsFragment extends Fragment {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Moods");
-        String hCounter, rCounter, nCounter, sCounter, aCounter, fCounter, pCounter, sicCounter, silCounter;
-
-        hCounter = String.valueOf(happyCounter);
-        databaseReference.child("happycard").setValue(hCounter);
-
-        rCounter = String.valueOf(relaxedCounter);
-        databaseReference.child("relaxedcard").setValue(rCounter);
-
-        nCounter = String.valueOf(neutralCounter);
-        databaseReference.child("neutralcard").setValue(nCounter);
-
-        sCounter = String.valueOf(sadCounter);
-        databaseReference.child("sadcard").setValue(sCounter);
-
-        aCounter = String.valueOf(angryCounter);
-        databaseReference.child("angrycard").setValue(aCounter);
-
-        fCounter = String.valueOf(fearCounter);
-        databaseReference.child("fearcard").setValue(fCounter);
-
-        pCounter = String.valueOf(proudCounter);
-        databaseReference.child("proudcard").setValue(pCounter);
-
-        sicCounter = String.valueOf(sickCounter);
-        databaseReference.child("sickcard").setValue(sicCounter);
-
-        silCounter = String.valueOf(sillyCounter);
-        databaseReference.child("sillycard").setValue(silCounter);
 
         happycard = view.findViewById(R.id.happycard);
         relaxedcard = view.findViewById(R.id.relaxedcard);
@@ -77,6 +58,8 @@ public class MoodsFragment extends Fragment {
         sickcard = view.findViewById(R.id.sickcard);
         sillycard = view.findViewById(R.id.sillycard);
 
+        getdata();
+
         insights = view.findViewById(R.id.insights);
         insights.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +68,8 @@ public class MoodsFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+
 
         happycard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -214,4 +199,68 @@ public class MoodsFragment extends Fragment {
 
     return view;
 
-}}
+}
+    private void getdata() {
+//        ProgressDialog pd=new ProgressDialog(getActivity());
+//        pd.setMessage("Loading Data");
+//        pd.show();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Moods");
+        databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (task.isSuccessful()) {
+//                            pd.cancel();
+                            if (task.getResult().exists()) {
+                                for (DataSnapshot data : task.getResult().getChildren()) {
+                                    switch (data.getKey()) {
+                                        case "happycard":
+                                            happyCounter=Integer.parseInt(data.getValue().toString());
+                                            break;
+                                        case "fearcard":
+                                            fearCounter=Integer.parseInt(data.getValue().toString());
+                                            break;
+
+                                        case "relaxedcard":
+                                            rCounter = data.getValue().toString();
+                                            relaxedCounter=Integer.parseInt(rCounter);
+                                            break;
+
+                                        case "neutralcard":
+                                            nCounter = data.getValue().toString();
+                                            neutralCounter=Integer.parseInt(nCounter);
+                                            break;
+
+                                        case "sadcard":
+                                            sCounter = data.getValue().toString();
+                                            sadCounter=Integer.parseInt(sCounter);
+                                            break;
+
+                                        case "angrycard":
+                                            aCounter = data.getValue().toString();
+                                            angryCounter=Integer.parseInt(aCounter);
+                                            break;
+
+                                        case "proudcard":
+                                            pCounter = data.getValue().toString();
+                                            proudCounter=Integer.parseInt(pCounter);
+                                            break;
+
+                                        case "sickcard":
+                                            sicCounter = data.getValue().toString();
+                                            sickCounter=Integer.parseInt(sicCounter);
+                                            break;
+
+                                        case "sillycard":
+                                            silCounter = data.getValue().toString();
+                                            sillyCounter=Integer.parseInt(silCounter);
+                                            break;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+    }
+}
