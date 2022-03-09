@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Ethereal"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.SurveyActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.NotesActivity"
             android:exported="false" />
         <activity

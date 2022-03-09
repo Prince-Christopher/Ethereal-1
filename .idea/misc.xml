@@ -22,6 +22,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/drawable_underline.xml" value="0.16123778501628663" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/edit.xml" value="0.15902777777777777" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/fadeout.xml" value="0.13055555555555556" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/flatbutton.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/ic_activities.xml" value="0.12" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22602739726027396" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/moodsdialog.xml" value="0.16" />
@@ -31,6 +32,8 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/pause.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/play.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/profile.xml" value="0.15902777777777777" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedbutton.xml" value="0.16" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedbutton2.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedcircle.xml" value="0.2578125" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/roundedrectangle.xml" value="0.16" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/drawable/scroll_bg.xml" value="0.136" />
@@ -66,6 +69,7 @@
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_sos.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_splash.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_start.xml" value="0.2" />
+        <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_survey.xml" value="0.2" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_therapists.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/activity_view_goals.xml" value="0.209009009009009" />
         <entry key="..\:/Users/Prince/AndroidStudioProjects/Ethereal-1/app/src/main/res/layout/bot_message.xml" value="0.264" />
