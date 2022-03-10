@@ -93,6 +93,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         String name = namenickname.getText().toString().trim();
         String email = emailjoin.getText().toString().trim();
         String password = passwordjoin.getText().toString().trim();
+        String surveyscore = "";
 
         if(name.isEmpty()){
             namenickname.setError("This field is required");
@@ -139,7 +140,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(name,email,password);
+                    User user = new User(name,email,password,surveyscore);
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

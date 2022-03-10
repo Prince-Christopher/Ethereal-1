@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ethereal.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,9 +33,10 @@ public class SurveyActivity extends AppCompatActivity {
     private Button op1, op2, op3, op4;
     private ArrayList<Survey> surveyArrayList;
     private FirebaseDatabase firebaseDatabase;
+    private FirebaseUser fUser;
     DatabaseReference databaseReference;
     private SharedPreferences sp;
-    private TextView question, questionNumber, myscore; //use camelCase as much as possible
+    private TextView question, questionNumber; //use camelCase as much as possible
     private Random random;
     private int currentScore = 0, questionsAttempted = 0, currentPosition = 1; //try to use whole words, it will potentially avoid confusion
     private Survey survey; //make the current survey a variable, so you dont need to get it from the list everytime.
@@ -73,8 +76,8 @@ public class SurveyActivity extends AppCompatActivity {
         op3 = findViewById(R.id.op3);
         op4 = findViewById(R.id.op4);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Survey");
-        myscore = findViewById(R.id.myscore);
+        fUser = FirebaseAuth.getInstance().getCurrentUser();
+        databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
         questionNumber = findViewById(R.id.questionnumber);
         question = findViewById(R.id.question);
 
@@ -124,7 +127,7 @@ public class SurveyActivity extends AppCompatActivity {
         if (questionsAttempted >= 9) {
             String stringcurrentscore = String.valueOf(currentScore);
             Intent i = new Intent(SurveyActivity.this, HomeActivity.class);
-            databaseReference.child("SurveyScore").setValue(stringcurrentscore);
+            databaseReference.child("surveyscore").setValue(stringcurrentscore);
             startActivity(i);
         }
         if (survey == null) {
@@ -136,7 +139,6 @@ public class SurveyActivity extends AppCompatActivity {
         //using String.format is just nicer imo
         //questionattempted is replacing the %s
         questionNumber.setText(String.format("%s out of 9", questionsAttempted));
-        myscore.setText("Score is " +currentScore);
         question.setText(survey.getQuestion());
         op1.setText(survey.getOption1());
         op2.setText(survey.getOption2());

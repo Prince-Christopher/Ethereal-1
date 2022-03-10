@@ -175,7 +175,7 @@ public class HomeActivity extends AppCompatActivity {
             fUser = FirebaseAuth.getInstance().getCurrentUser();
             profileId = fUser.getUid();
             firebaseDatabase = FirebaseDatabase.getInstance();
-            databaseReference = firebaseDatabase.getReference("Survey");
+            databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
             hpdescription = findViewById(R.id.hpdescription);
             displayscore = findViewById(R.id.displayscore);
 //            Log.e("TAG2", "displaying scores in home");
@@ -203,7 +203,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     private void displayscore() {
-        databaseReference.child("SurveyScore").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("surveyscore").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
