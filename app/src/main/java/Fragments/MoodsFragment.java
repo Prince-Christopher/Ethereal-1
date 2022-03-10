@@ -21,6 +21,8 @@ import com.example.ethereal.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,7 @@ import java.util.List;
 public class MoodsFragment extends Fragment {
     public int happyCounter, relaxedCounter, neutralCounter, sadCounter, angryCounter, fearCounter, proudCounter, sickCounter, sillyCounter;
     FirebaseDatabase firebaseDatabase;
+    private FirebaseUser fUser;
     DatabaseReference databaseReference;
     MaterialCardView happycard, relaxedcard, neutralcard, sadcard, angrycard, fearcard, proudcard, sickcard, sillycard;
     ImageView insights;
@@ -45,9 +48,9 @@ public class MoodsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_moods, container, false);
 
+        fUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Moods");
-
+        databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
         happycard = view.findViewById(R.id.happycard);
         relaxedcard = view.findViewById(R.id.relaxedcard);
         neutralcard = view.findViewById(R.id.neutralcard);
@@ -205,7 +208,7 @@ public class MoodsFragment extends Fragment {
 //        pd.setMessage("Loading Data");
 //        pd.show();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Moods");
+        databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
         databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -223,37 +226,37 @@ public class MoodsFragment extends Fragment {
 
                                         case "relaxedcard":
                                             rCounter = data.getValue().toString();
-                                            relaxedCounter=Integer.parseInt(rCounter);
+                                            relaxedCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "neutralcard":
                                             nCounter = data.getValue().toString();
-                                            neutralCounter=Integer.parseInt(nCounter);
+                                            neutralCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "sadcard":
                                             sCounter = data.getValue().toString();
-                                            sadCounter=Integer.parseInt(sCounter);
+                                            sadCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "angrycard":
                                             aCounter = data.getValue().toString();
-                                            angryCounter=Integer.parseInt(aCounter);
+                                            angryCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "proudcard":
                                             pCounter = data.getValue().toString();
-                                            proudCounter=Integer.parseInt(pCounter);
+                                            proudCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "sickcard":
                                             sicCounter = data.getValue().toString();
-                                            sickCounter=Integer.parseInt(sicCounter);
+                                            sickCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                         case "sillycard":
                                             silCounter = data.getValue().toString();
-                                            sillyCounter=Integer.parseInt(silCounter);
+                                            sillyCounter=Integer.parseInt(data.getValue().toString());
                                             break;
 
                                     }

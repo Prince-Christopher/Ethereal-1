@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.ethereal.R;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,8 +28,9 @@ public class InsightsActivity extends AppCompatActivity {
 
     MaterialCardView insightsback;
     TextView happycount, relaxedcount, neutralcount, sadcount, angrycount, fearcount, proudcount, sickcount, sillycount;
+    private FirebaseDatabase firebaseDatabase;
+    private FirebaseUser fUser;
     DatabaseReference databaseReference;
-    FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,9 @@ public class InsightsActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        firebaseDatabase =  FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Moods");
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        fUser = FirebaseAuth.getInstance().getCurrentUser();
+        databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
 
         happycount = findViewById(R.id.happycount);
         databaseReference.child("happycard").addValueEventListener(new ValueEventListener() {

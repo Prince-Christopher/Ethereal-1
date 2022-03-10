@@ -2,6 +2,7 @@ package com.example.ethereal.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -43,6 +44,19 @@ public class SurveyActivity extends AppCompatActivity {
 
     //also in android studio, use CTRL + Alt + L to format your code.
     //it is a fast way to make it look nicer.
+//    String prevStarted = "yes";
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+//        if (!sharedpreferences.getBoolean(prevStarted, false)) {
+//            SharedPreferences.Editor editor = sharedpreferences.edit();
+//            editor.putBoolean(prevStarted, Boolean.TRUE);
+//            editor.apply();
+//        } else {
+//            updateViews();
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
