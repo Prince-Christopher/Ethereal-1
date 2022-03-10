@@ -3,13 +3,16 @@ package com.example.ethereal.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ethereal.R;
 import com.google.firebase.database.DatabaseReference;
@@ -22,11 +25,22 @@ import Model.Survey;
 
 public class SurveyActivity extends AppCompatActivity {
 
-    Button op1, op2, op3, op4;
-    ArrayList<Survey> surveyArrayList;
-    TextView question, questionnumber, myscore;
-    Random random;
-    int currentscore = 0, questionattempted = 1, currentpos;
+    //mark these as private. if there is no access modifier, it defaults to protected which can be confusing and
+    //is a privacy concern
+    //since you only use these inside this class, keep them private.
+    private Button op1, op2, op3, op4;
+    private ArrayList<Survey> surveyArrayList;
+    private FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    private SharedPreferences sp;
+    private TextView question, questionNumber, myscore; //use camelCase as much as possible
+    private Random random;
+    private int currentScore = 0, questionsAttempted = 0, currentPosition = 1; //try to use whole words, it will potentially avoid confusion
+    private Survey survey; //make the current survey a variable, so you dont need to get it from the list everytime.
+
+    //also in android studio, use CTRL + Alt + L to format your code.
+    //it is a fast way to make it look nicer.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,112 +56,139 @@ public class SurveyActivity extends AppCompatActivity {
             }
         }
 
+        surveyArrayList = new ArrayList<>();
+        random = new Random();
+        initViews();
+        addSurveyQuestions();
+        updatePosition(); //make sure this is called at the start to get a survey
+        updateViews();
+
+    }
+
+    //create a separate function for initializing your views.
+    //its a personal preference, but it does look a lot cleaner.
+    private void initViews() {
         op1 = findViewById(R.id.op1);
         op2 = findViewById(R.id.op2);
         op3 = findViewById(R.id.op3);
         op4 = findViewById(R.id.op4);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Survey");
         myscore = findViewById(R.id.myscore);
-        questionnumber = findViewById(R.id.questionnumber);
+        questionNumber = findViewById(R.id.questionnumber);
         question = findViewById(R.id.question);
-        surveyArrayList = new ArrayList<>();
-        random = new Random();
-        getSurveyQuestion(surveyArrayList);
-        currentpos = random.nextInt(surveyArrayList.size());
-        setDataToViews(currentpos);
 
-        op1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            if (surveyArrayList.get(currentpos).getAnswer().trim().toLowerCase() != op1.getText().toString().trim().toLowerCase()){
-                currentscore = currentscore + 1;
+        //instead of new View.OnClickListener() { just use a lambda. it is a lot cleaner and faster
+        // v -> { } with v as the view from the public void onClick(View v) {
+        op1.setOnClickListener
+                (v -> {
+            //use equalsIgnoreCase instead of making the entire string lowercase
+            if (survey.getAnswer() != (op1.getText().toString())) {
+                currentScore = currentScore + 0; //cant tell what you're trying to do with your score here...
+                //using currentScore++; will add 1 to the score
+                //if different answers give a higher score, you should add that in your survey class
+                //such as currentScore += survey.getScore()
             }
-            questionattempted++;
-            currentpos = random.nextInt(surveyArrayList.size());
-            setDataToViews(currentpos);
-            }
+            updatePosition();
+            updateViews();
         });
-        op2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (surveyArrayList.get(currentpos).getAnswer().trim().toLowerCase() != op2.getText().toString().trim().toLowerCase()){
-                    currentscore = currentscore + 2;
-                }
-                questionattempted++;
-                currentpos = random.nextInt(surveyArrayList.size());
-                setDataToViews(currentpos);
+        op2.setOnClickListener(v -> {
+            //since you set the strings for Survey yourself, there is no trailing space.
+            //trim() is not needed.
+            if (survey.getAnswer() != (op1.getText().toString())) {
+                currentScore = currentScore + 1;
             }
+            updatePosition();
+            updateViews();
         });
-        op3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (surveyArrayList.get(currentpos).getAnswer().trim().toLowerCase() != op3.getText().toString().trim().toLowerCase()){
-                    currentscore = currentscore + 3;
-                }
-                questionattempted++;
-                currentpos = random.nextInt(surveyArrayList.size());
-                setDataToViews(currentpos);
+        op3.setOnClickListener(v -> {
+            if (survey.getAnswer() != (op3.getText().toString())) {
+                currentScore = currentScore + 2;
             }
+            updatePosition();
+            updateViews();
         });
-        op4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (surveyArrayList.get(currentpos).getAnswer().trim().toLowerCase() != op4.getText().toString().trim().toLowerCase()){
-                    currentscore = currentscore + 4;
-                }
-                questionattempted++;
-                currentpos = random.nextInt(surveyArrayList.size());
-                setDataToViews(currentpos);
+        op4.setOnClickListener(v -> {
+            if (survey.getAnswer() != (op4.getText().toString())) {
+                currentScore = currentScore + 3;
             }
+            updatePosition();
+            updateViews();
         });
     }
 
 
-    private void setDataToViews(int currentpos) {
-        questionnumber.setText(+questionattempted + " of 9");
-        myscore.setText("Score is " +currentscore);
-        if (questionattempted == 9) {
+    //since you use only currentPosition globally (outside any function) the variable is not needed.
+    private void updateViews() {
+        //make sure it doesn't go past 9
+        if (questionsAttempted >= 9) {
+            String stringcurrentscore = String.valueOf(currentScore);
             Intent i = new Intent(SurveyActivity.this, HomeActivity.class);
+            databaseReference.child("SurveyScore").setValue(stringcurrentscore);
             startActivity(i);
-        } else {
-            question.setText(surveyArrayList.get(currentpos).getQuestion());
-//            surveyArrayList.remove(0);
-//            surveyArrayList.remove(1);
-//            surveyArrayList.remove(2);
-//            surveyArrayList.remove(3);
-//            surveyArrayList.remove(4);
-//            surveyArrayList.remove(5);
-//            surveyArrayList.remove(6);
-//            surveyArrayList.remove(7);
-//            surveyArrayList.remove(8);
-            op1.setText(surveyArrayList.get(currentpos).getOption1());
-            op2.setText(surveyArrayList.get(currentpos).getOption2());
-            op3.setText(surveyArrayList.get(currentpos).getOption3());
-            op4.setText(surveyArrayList.get(currentpos).getOption4());
         }
+        if (survey == null) {
+            return;
+        }
+        //might as well add questionsAttempted++; here
+        questionsAttempted++;
+        //the first + sign is not needed.
+        //using String.format is just nicer imo
+        //questionattempted is replacing the %s
+        questionNumber.setText(String.format("%s out of 9", questionsAttempted));
+        myscore.setText("Score is " +currentScore);
+        question.setText(survey.getQuestion());
+        op1.setText(survey.getOption1());
+        op2.setText(survey.getOption2());
+        op3.setText(survey.getOption3());
+        op4.setText(survey.getOption4());
     }
 
-    private void getSurveyQuestion(ArrayList<Survey> surveyArrayList) {
-        surveyArrayList.add
-                (new Survey("Little interest or pleasure in doing things?", "Not at all", "Several days", "More than half the days", "Nearly every day", "0"));
-        surveyArrayList.add
-                (new Survey("Feeling down, depressed, or hopeless?", "Not at all", "Several days", "More than half the days", "Nearly every day", "0"));
+    //since you only have one arraylist, the variable is not needed.
+    //also you using getSurveyQuestion() is confusing.
+    private void addSurveyQuestions() {
+        surveyArrayList.add(new Survey("Little interest or pleasure in doing things?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Feeling down, depressed, or hopeless?", "Not at all",
+                "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Trouble falling or staying asleep, or sleeping too much?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Feeling tired or having little energy?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Poor appetite or overeating?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Feeling bad about yourself - or that you are a failure or have let yourself or your family down?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Trouble concentrating on things, such as reading the newspaper or watching television?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Moving or speaking so slowly that other people could have noticed?\n" +
+                "Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+        surveyArrayList.add(new Survey("Thoughts that you would be better off dead, or of hurting yourself in some way?",
+                "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+    }
 
-        surveyArrayList.add
-                (new Survey("Trouble falling or staying asleep, or sleeping too much?", "Not at all", "Several days", "More than half the days", "Nearly every day", "0"));
+    //generates the index and refreshes the survey
+    private void updatePosition() {
+        currentPosition = random.nextInt(1);
+        refreshSurvey();
+    }
 
-        surveyArrayList.add
-                (new Survey("Feeling tired or having little energy?", "Not at all", "Several days", "More than half the days", "Nearly every day", "0"));
-        surveyArrayList.add
-                (new Survey("Poor appetite or overeating?", "Not at all", "Several days", "More than half the days", "Nearly every day", "0"));
-        surveyArrayList.add
-                (new Survey("Feeling bad about yourself - or that you are a failure or have let yourself or your family down?", "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
-        surveyArrayList.add
-                (new Survey("Trouble concentrating on things, such as reading the newspaper or watching television?", "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
-        surveyArrayList.add
-                (new Survey("Moving or speaking so slowly that other people could have noticed?\n" +
-                        "Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?", "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
-        surveyArrayList.add
-                (new Survey("Thoughts that you would be better off dead, or of hurting yourself in some way?", "Not at all", "Several days", "More than half the days", "Nearly every day", ""));
+    //this will make getting the survey cleaner and less error prone.
+    private void refreshSurvey() {
+        //check if the list is empty or the if the position is higher than the list size.
+        if (surveyArrayList.isEmpty() || currentPosition > surveyArrayList.size() - 1) {
+            if (survey != null) {
+                survey = null;
+            }
+            return;
+        }
+        survey = surveyArrayList.get(currentPosition);
+        surveyArrayList.remove(currentPosition); //remove the survey from the list so it doesn't get asked again.
+    }
+
+    private void toast(String s) {
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
 }

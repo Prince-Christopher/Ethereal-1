@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -38,9 +40,11 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private TextView heyusername;
+    private TextView heyusername, displayscore, hpdescription;
     private FirebaseUser fUser;
-    private String profileId;
+    private FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    private String profileId, score;
     public MaterialCardView addgoalcard, mediall, healthall, viewgoalcard, bookasessioncard, soscard;
     RecyclerView medichant_recycler;
     RecyclerView.Adapter mediadapter;
@@ -69,6 +73,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -167,10 +172,15 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
 
-
-
             fUser = FirebaseAuth.getInstance().getCurrentUser();
             profileId = fUser.getUid();
+            firebaseDatabase = FirebaseDatabase.getInstance();
+            databaseReference = firebaseDatabase.getReference("Survey");
+            hpdescription = findViewById(R.id.hpdescription);
+            displayscore = findViewById(R.id.displayscore);
+//            Log.e("TAG2", "displaying scores in home");
+//            score = getIntent().getStringExtra("currentscore");
+//            displayscore.setText(score);
             heyusername = findViewById(R.id.heyusername);
             medichant_recycler = findViewById(R.id.medichant_recycler);
             medichant_recycler.setHasFixedSize(true);
@@ -189,9 +199,26 @@ public class HomeActivity extends AppCompatActivity {
             medichant_recycler();
             activities_recycler();
             helloUser();
+            displayscore();
         }
 
-        private void activities_recycler() {
+    private void displayscore() {
+        databaseReference.child("SurveyScore").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String data = snapshot.getValue(String.class);
+                displayscore.setText(data);
+                hpdescription.setText("Based on your overall health test,\npoints you have secured is " +data);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void activities_recycler() {
             ArrayList<ActivitiesHelperClass> activities = new ArrayList<>();
             activities.add(new ActivitiesHelperClass(R.drawable.activities_3, "Essential Wellness Pack", "5 exercises."));
             activities.add(new ActivitiesHelperClass(R.drawable.activities_2, "Improve Self Esteem", "7 exercises."));
@@ -256,5 +283,6 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
                 }
         });
+
     }
 }
