@@ -141,7 +141,7 @@ public class SurveyActivity extends AppCompatActivity {
         if (questionsAttempted >= 9) {
             String stringcurrentscore = String.valueOf(currentScore);
             Intent i = new Intent(SurveyActivity.this, HomeActivity.class);
-            databaseReference.child("surveyscore").setValue(stringcurrentscore);
+            databaseReference.child("Survey").child("surveyscore").setValue(stringcurrentscore);
             startActivity(i);
         }
         if (survey == null) {

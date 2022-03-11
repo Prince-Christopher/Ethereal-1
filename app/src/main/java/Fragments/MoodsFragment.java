@@ -84,7 +84,7 @@ public class MoodsFragment extends Fragment {
                 happyCounter++;
                 String hCounter;
                 hCounter = String.valueOf(happyCounter);
-                databaseReference.child("happycard").setValue(hCounter);
+                databaseReference.child("Moods").child("happycard").setValue(hCounter);
             }
     });
 
@@ -98,7 +98,7 @@ public class MoodsFragment extends Fragment {
                 relaxedCounter++;
                 String rCounter;
                 rCounter = String.valueOf(relaxedCounter);
-                databaseReference.child("relaxedcard").setValue(rCounter);
+                databaseReference.child("Moods").child("relaxedcard").setValue(rCounter);
             }
         });
 
@@ -112,7 +112,7 @@ public class MoodsFragment extends Fragment {
                 neutralCounter++;
                 String nCounter;
                 nCounter = String.valueOf(neutralCounter);
-                databaseReference.child("neutralcard").setValue(nCounter);
+                databaseReference.child("Moods").child("neutralcard").setValue(nCounter);
             }
         });
 
@@ -126,7 +126,7 @@ public class MoodsFragment extends Fragment {
                 sadCounter++;
                 String saCounter;
                 saCounter = String.valueOf(sadCounter);
-                databaseReference.child("sadcard").setValue(saCounter);
+                databaseReference.child("Moods").child("sadcard").setValue(saCounter);
             }
         });
 
@@ -140,7 +140,7 @@ public class MoodsFragment extends Fragment {
                 angryCounter++;
                 String aCounter;
                 aCounter = String.valueOf(angryCounter);
-                databaseReference.child("angrycard").setValue(aCounter);
+                databaseReference.child("Moods").child("angrycard").setValue(aCounter);
             }
         });
 
@@ -154,7 +154,7 @@ public class MoodsFragment extends Fragment {
                 fearCounter++;
                 String fCounter;
                 fCounter = String.valueOf(fearCounter);
-                databaseReference.child("fearcard").setValue(fCounter);
+                databaseReference.child("Moods").child("fearcard").setValue(fCounter);
             }
         });
 
@@ -168,7 +168,7 @@ public class MoodsFragment extends Fragment {
                 proudCounter++;
                 String pCounter;
                 pCounter = String.valueOf(proudCounter);
-                databaseReference.child("proudcard").setValue(pCounter);
+                databaseReference.child("Moods").child("proudcard").setValue(pCounter);
             }
         });
 
@@ -182,7 +182,7 @@ public class MoodsFragment extends Fragment {
                 sickCounter++;
                 String sicCounter;
                 sicCounter = String.valueOf(sickCounter);
-                databaseReference.child("sickcard").setValue(sicCounter);
+                databaseReference.child("Moods").child("sickcard").setValue(sicCounter);
             }
         });
 
@@ -196,7 +196,7 @@ public class MoodsFragment extends Fragment {
                 sillyCounter++;
                 String silCounter;
                 silCounter = String.valueOf(sillyCounter);
-                databaseReference.child("sillycard").setValue(silCounter);
+                databaseReference.child("Moods").child("sillycard").setValue(silCounter);
             }
         });
 

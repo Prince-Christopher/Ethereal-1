@@ -57,7 +57,7 @@ public class InsightsActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
 
         happycount = findViewById(R.id.happycount);
-        databaseReference.child("happycard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("happycard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -71,7 +71,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         relaxedcount = findViewById(R.id.relaxedcount);
-        databaseReference.child("relaxedcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("relaxedcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -85,7 +85,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         neutralcount = findViewById(R.id.neutralcount);
-        databaseReference.child("neutralcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("neutralcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -99,7 +99,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         sadcount = findViewById(R.id.sadcount);
-        databaseReference.child("sadcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("sadcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -113,7 +113,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         angrycount = findViewById(R.id.angrycount);
-        databaseReference.child("angrycard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("angrycard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -127,7 +127,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         fearcount = findViewById(R.id.fearcount);
-        databaseReference.child("fearcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("fearcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -141,7 +141,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         proudcount = findViewById(R.id.proudcount);
-        databaseReference.child("proudcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("proudcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -155,7 +155,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         sickcount = findViewById(R.id.sickcount);
-        databaseReference.child("sickcard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("sickcard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);
@@ -169,7 +169,7 @@ public class InsightsActivity extends AppCompatActivity {
         });
 
         sillycount = findViewById(R.id.sillycount);
-        databaseReference.child("sillycard").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Moods").child("sillycard").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String count = snapshot.getValue(String.class);

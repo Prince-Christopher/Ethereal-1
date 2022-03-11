@@ -203,7 +203,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     private void displayscore() {
-        databaseReference.child("surveyscore").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Survey").child("surveyscore").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String data = snapshot.getValue(String.class);
