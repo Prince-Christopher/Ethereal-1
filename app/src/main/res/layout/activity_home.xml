@@ -126,6 +126,20 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:id="@+id/displayscore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/lato_bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView"
+                            app:layout_constraintStart_toStartOf="@+id/imageView"
+                            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+
+                        <TextView
                             android:id="@+id/healthpoints"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -149,7 +163,6 @@
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/lato_bold"
-                            android:text="@string/health_points"
                             android:textColor="@color/lavender"
                             android:textSize="13dp"
                             app:layout_constraintBottom_toBottomOf="parent"

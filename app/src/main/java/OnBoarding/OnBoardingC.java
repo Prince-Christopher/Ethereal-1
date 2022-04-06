@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.ethereal.Activities.BreatheActivity;
 import com.example.ethereal.Activities.HomeActivity;
+import com.example.ethereal.Activities.SurveyActivity;
 import com.example.ethereal.R;
 
 
@@ -34,7 +35,7 @@ public class OnBoardingC extends Fragment {
         skiptomain3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity().getApplication(), HomeActivity.class);
+                Intent i = new Intent(getActivity().getApplication(), SurveyActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(i);
                 getActivity().overridePendingTransition(R.anim.fadeinsplash, R.anim.fadeoutsplash);

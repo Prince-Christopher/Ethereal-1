@@ -58,7 +58,7 @@ public class BreatheActivity extends AppCompatActivity {
             finish();
 
         };
-        handler.postDelayed(runnable, 5000);
+        handler.postDelayed(runnable, 10000);
         skip = findViewById(R.id.skip);
         skip.setOnClickListener((View.OnClickListener) v ->
         {

@@ -1,15 +1,16 @@
 package Model;
 
 public class User {
-    private String name, email, password;
+    private String name, email, password, surveyscore;
 
     public User() {
     }
 
-    public User(String name, String email, String password) {
+    public User(String name, String email, String password, String surveyscore) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.surveyscore = surveyscore;
     }
 
     public String getName() {
@@ -34,6 +35,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSurveyscore(){
+        return surveyscore;
+    }
+
+    public void setSurveyscore(String surveyscore){
+        this.surveyscore = surveyscore;
     }
 }
 

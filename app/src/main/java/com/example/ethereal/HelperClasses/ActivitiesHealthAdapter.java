@@ -1,6 +1,6 @@
 package com.example.ethereal.HelperClasses;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ethereal.Activities.MeditationPlayerActivity;
+import com.example.ethereal.Activities.HealthCourseActivity1;
+import com.example.ethereal.Activities.HealthCourseActivity2;
+import com.example.ethereal.Activities.HealthCourseActivity3;
 import com.example.ethereal.R;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Model.Health;
 
@@ -37,16 +38,36 @@ public class ActivitiesHealthAdapter extends RecyclerView.Adapter<ActivitiesHeal
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ActivitiesHealthHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ActivitiesHealthHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Health health1 = health.get(position);
         holder.tv_health_title.setText(health1.getTitle());
         holder.tv_health_desc.setText(health1.getDescription());
         holder.img_health_thumbnail.setImageResource(health1.getThumbnail());
-        holder.healthcard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                v.getContext().startActivity(new Intent(v.getContext(), MeditationPlayerActivity.class));
+        holder.healthcard.setOnClickListener(v -> {
+            if (position == 0){
+                Intent i = new Intent(v.getContext(), HealthCourseActivity1.class);
+                i.putExtra("Title", health.get(position).getTitle());
+                i.putExtra("Description", health.get(position).getDescription());
+//                i.putExtra("URL1", "https://etherealmeditationbucket.s3.ap-south-1.amazonaws.com/Meditations/Mindful%2BMeditation+compression.mp3");
+//                preparemediaplayer1(mediaPlayer, totaltime);
+                v.getContext().startActivity(i);
+            }
+            if (position == 1){
+                Intent i = new Intent(v.getContext(), HealthCourseActivity2.class);
+                i.putExtra("Title", health.get(position).getTitle());
+                i.putExtra("Description", health.get(position).getDescription());
+//                i.putExtra("URL1", "https://etherealmeditationbucket.s3.ap-south-1.amazonaws.com/Meditations/Mindful%2BMeditation+compression.mp3");
+//                preparemediaplayer1(mediaPlayer, totaltime);
+                v.getContext().startActivity(i);
+            }
+            if (position == 2){
+                Intent i = new Intent(v.getContext(), HealthCourseActivity3.class);
+                i.putExtra("Title", health.get(position).getTitle());
+                i.putExtra("Description", health.get(position).getDescription());
+//                i.putExtra("URL1", "https://etherealmeditationbucket.s3.ap-south-1.amazonaws.com/Meditations/Mindful%2BMeditation+compression.mp3");
+//                preparemediaplayer1(mediaPlayer, totaltime);
+                v.getContext().startActivity(i);
             }
         });
 

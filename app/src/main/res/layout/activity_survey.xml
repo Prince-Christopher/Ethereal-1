@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/pale_pink"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SurveyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/lavender"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/questionnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/lato"
+            android:text="1 of 7"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="What is this question?"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/pale_pink"
+        android:layout_weight="0.5">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/op1"
+                    android:layout_weight="1"
+                    app:backgroundTint="@color/white"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grey"
+                    android:text="Option 1"
+                    android:background="@drawable/roundedbutton1"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/op2"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    app:backgroundTint="@color/white"
+                    android:textColor="@color/grey"
+                    android:text="Option 2"
+                    android:background="@drawable/flatbutton"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/op3"
+                        app:backgroundTint="@color/white"
+                        android:textColor="@color/grey"
+                        android:textAllCaps="false"
+                        android:layout_weight="1"
+                        android:text="Option 3"
+                        android:background="@drawable/flatbutton"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="2dp"
+                        android:id="@+id/op4"
+                        app:backgroundTint="@color/white"
+                        android:textAllCaps="false"
+                        android:textColor="@color/grey"
+                        android:layout_weight="1"
+                        android:text="Option 4"
+                        android:background="@drawable/flatbutton"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/myscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="150dp"/>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

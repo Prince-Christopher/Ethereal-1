@@ -20,15 +20,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_task"
-        android:backgroundTint="@color/pale_grey"
         android:layout_width="wrap_content"
         android:hapticFeedbackEnabled="true"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/sixteen_dp"
+        android:layout_margin="16dp"
         app:fabSize="normal"
         app:borderWidth="0dp"
         app:elevation="1dp"
-        app:tint="@color/grey"
+        app:tint="@color/white"
         app:layout_anchor="@id/contentFrame"
         app:layout_anchorGravity="bottom|right|end"
         app:srcCompat="@drawable/add"

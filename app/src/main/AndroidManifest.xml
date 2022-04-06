@@ -16,10 +16,31 @@
         android:theme="@style/Theme.Ethereal"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.HealthCourseActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.HealthCourseActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.HealthCourseActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MeditationPlayerActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MeditationPlayerActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SurveyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NotesActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.InsightsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.MeditationPlayerActivity"
+            android:name=".Activities.MeditationPlayerActivity1"
             android:exported="true" />
         <activity
             android:name=".Activities.ChildHelplinesActivity"
