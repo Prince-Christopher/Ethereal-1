@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pale_lavender"
+    tools:context=".Activities.HealthPointsDesc">
+
+    <TextView
+        android:id="@+id/healthpintstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Points"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/dark_lavender"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/healthpointsdesc"
+        android:layout_below="@id/healthpintstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/healthpointsdesc"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/dark_lavender" />
+
+    <TextView
+        android:id="@+id/depsevtable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/healthpointsdesc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
+        android:text="Depression Severity Table"
+        android:textColor="@color/dark_lavender"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_below="@id/depsevtable"
+        android:layout_height="290dp"
+        android:id="@+id/table"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/table" />
+
+
+</RelativeLayout>

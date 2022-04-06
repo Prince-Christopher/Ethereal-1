@@ -260,4 +260,9 @@
         \n\nMaybe it\’s time to leave a toxic job. Maybe you need to address the dysfunction in one of your primary relationships. Feel empowered to make the changes that will allow you to live a healthier, less stressful life.
     </string>
     <string name="course3day5">Review</string>
+    <string name="healthpointsdesc">Health points allows the patient to understand the depression severity and it is shown on a scale of 27. \nThen answers are marked on a scale of 0-4 and then all the answers are added to get the score.
+        \n\nIt is not a screening tool for depression but it is used to monitor the severity of depression and response to treatment.
+
+
+    </string>
 </resources>

@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private String profileId, score;
-    public MaterialCardView addgoalcard, mediall, healthall, viewgoalcard, bookasessioncard, soscard;
+    public MaterialCardView addgoalcard, mediall, healthall, viewgoalcard, bookasessioncard, soscard, hpcard;
     RecyclerView medichant_recycler;
     RecyclerView.Adapter mediadapter;
     RecyclerView activities_recycler;
@@ -124,6 +124,14 @@ public class HomeActivity extends AppCompatActivity {
 //                fragmentTransaction.addToBackStack(null);
 //                fragmentTransaction.commit();
 
+                }
+            });
+            hpcard = findViewById(R.id.hpcard);
+            hpcard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(HomeActivity.this, HealthPointsDesc.class);
+                    startActivity(i);
                 }
             });
             bookasessioncard = findViewById(R.id.bookasessioncard);
