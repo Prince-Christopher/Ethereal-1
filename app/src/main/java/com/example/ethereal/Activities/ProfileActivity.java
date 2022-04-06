@@ -108,39 +108,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        setUpViewPager(viewPager);
-//        tabLayout.setupWithViewPager(viewPager);
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
-//    }
-//    private void setUpViewPager(ViewPager viewPager){
-//        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), ViewPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-//
-//        adapter.addFragment(new MoodsFragment(), "Mood");
-//        adapter.addFragment(new NotificationsFragment(), "Notifications");
-//        adapter.addFragment(new JournalFragment(), "Journal");
-//        viewPager.setAdapter(adapter);
-//
-//    }
-
     private void profileName() {
 
         FirebaseDatabase.getInstance().getReference().child("Users").child(profileId).addValueEventListener(new ValueEventListener() {

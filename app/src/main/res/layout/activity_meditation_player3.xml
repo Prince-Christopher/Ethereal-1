@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/tangerine"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MeditationPlayerActivity2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/seeklayout">
+
+        <TextView
+            android:id="@+id/mediplayertitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/pale_yellow"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/mediplayerdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato"
+            android:textSize="15dp"
+            android:layout_below="@id/mediplayertitle"
+            android:textColor="@color/pale_yellow"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/seeklayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+
+        <CustomClasses.SeekArc
+            android:id="@+id/seekArc"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_centerInParent="true"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            app:rotation="180"
+            app:startAngle="30"
+            app:sweepAngle="300" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/seeklayout">
+
+
+        <TextView
+            android:id="@+id/currenttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/currenttime"
+            android:textColor="@color/pale_yellow"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/currenttime"
+            android:textSize="15dp"
+            android:textColor="@color/pale_yellow"
+            android:fontFamily="@font/lato_bold"
+            android:text=" / "/>
+
+        <TextView
+            android:id="@+id/totaltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/slash"
+            android:layout_marginEnd="120dp"
+            android:textSize="15dp"
+            android:textColor="@color/pale_yellow"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/totaltime"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+
+        <ImageView
+            android:id="@+id/playpause"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:src="@drawable/play"
+            android:backgroundTint="@color/pale_yellow" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
+

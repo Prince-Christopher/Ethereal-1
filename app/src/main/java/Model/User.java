@@ -40,6 +40,7 @@ public class User {
     public String getSurveyscore(){
         return surveyscore;
     }
+
     public void setSurveyscore(String surveyscore){
         this.surveyscore = surveyscore;
     }

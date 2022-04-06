@@ -220,9 +220,9 @@ public class HomeActivity extends AppCompatActivity {
 
     private void activities_recycler() {
             ArrayList<ActivitiesHelperClass> activities = new ArrayList<>();
-            activities.add(new ActivitiesHelperClass(R.drawable.activities_3, "Essential Wellness Pack", "5 exercises."));
-            activities.add(new ActivitiesHelperClass(R.drawable.activities_2, "Improve Self Esteem", "7 exercises."));
-            activities.add(new ActivitiesHelperClass(R.drawable.activities_1, "For Health Anxiety", "5 exercises."));
+            activities.add(new ActivitiesHelperClass(R.drawable.activities_3, "Better Sleep Course", "5 Days."));
+            activities.add(new ActivitiesHelperClass(R.drawable.activities_2, "Improve Self Esteem", "6 Days."));
+            activities.add(new ActivitiesHelperClass(R.drawable.activities_1, "Worry And Anxiety", "6 Days."));
 
             actiadapter = new ActivitiesAdapter(activities);
             activities_recycler.setAdapter(actiadapter);

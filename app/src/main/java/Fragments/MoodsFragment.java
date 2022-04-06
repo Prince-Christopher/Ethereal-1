@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class MoodsFragment extends Fragment {
     DatabaseReference databaseReference;
     MaterialCardView happycard, relaxedcard, neutralcard, sadcard, angrycard, fearcard, proudcard, sickcard, sillycard;
     ImageView insights;
+
     String hCounter, rCounter, nCounter, sCounter, aCounter, fCounter, pCounter, sicCounter, silCounter;
 
     @Override
@@ -84,6 +86,7 @@ public class MoodsFragment extends Fragment {
                 happyCounter++;
                 String hCounter;
                 hCounter = String.valueOf(happyCounter);
+                Log.e("MOOD", "value is set");
                 databaseReference.child("Moods").child("happycard").setValue(hCounter);
             }
     });
@@ -204,66 +207,62 @@ public class MoodsFragment extends Fragment {
 
 }
     private void getdata() {
-//        ProgressDialog pd=new ProgressDialog(getActivity());
-//        pd.setMessage("Loading Data");
-//        pd.show();
+        ProgressDialog pd=new ProgressDialog(getActivity());
+        pd.setMessage("Loading Data");
+        pd.show();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users").child(fUser.getUid());
-        databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
-                        if (task.isSuccessful()) {
-//                            pd.cancel();
-                            if (task.getResult().exists()) {
-                                for (DataSnapshot data : task.getResult().getChildren()) {
-                                    switch (data.getKey()) {
-                                        case "happycard":
-                                            happyCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
-                                        case "fearcard":
-                                            fearCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+        databaseReference.child("Moods").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                pd.cancel();
+                if (task.getResult().exists()) {
+                    for (DataSnapshot data : task.getResult().getChildren()) {
+                        switch (data.getKey()) {
+                            case "happycard":
+                                happyCounter=Integer.parseInt(data.getValue().toString());
+                                break;
+                            case "fearcard":
+                                fearCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "relaxedcard":
-                                            rCounter = data.getValue().toString();
-                                            relaxedCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "relaxedcard":
+                                relaxedCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "neutralcard":
-                                            nCounter = data.getValue().toString();
-                                            neutralCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "neutralcard":
+                                nCounter = data.getValue().toString();
+                                neutralCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "sadcard":
-                                            sCounter = data.getValue().toString();
-                                            sadCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "sadcard":
+                                sCounter = data.getValue().toString();
+                                sadCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "angrycard":
-                                            aCounter = data.getValue().toString();
-                                            angryCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "angrycard":
+                                aCounter = data.getValue().toString();
+                                angryCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "proudcard":
-                                            pCounter = data.getValue().toString();
-                                            proudCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "proudcard":
+                                pCounter = data.getValue().toString();
+                                proudCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "sickcard":
-                                            sicCounter = data.getValue().toString();
-                                            sickCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "sickcard":
+                                sicCounter = data.getValue().toString();
+                                sickCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                        case "sillycard":
-                                            silCounter = data.getValue().toString();
-                                            sillyCounter=Integer.parseInt(data.getValue().toString());
-                                            break;
+                            case "sillycard":
+                                silCounter = data.getValue().toString();
+                                sillyCounter=Integer.parseInt(data.getValue().toString());
+                                break;
 
-                                    }
-                                }
-                            }
                         }
                     }
-                });
+                }
+            }
+        });
     }
 }

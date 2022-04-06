@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aqua"
+    tools:context=".Activities.HealthCourseActivity3">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@color/aqua"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:tabIndicatorColor="@color/white"
+        app:tabRippleColor="@color/mild_grey"
+        app:tabSelectedTextColor="@color/pale_green"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabTextColor="@color/pale_green">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabDay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day 1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabDay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day 2" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabDay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day 3" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabDay4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day 4" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabDay5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day 5" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tablayout" />
+
+</RelativeLayout>
