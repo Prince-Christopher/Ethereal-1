@@ -146,7 +146,7 @@ public class JournalFragment extends Fragment {
                                 documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        Toast.makeText(v.getContext(),"This note is deleted",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(v.getContext(),"This Note is Deleted",Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override

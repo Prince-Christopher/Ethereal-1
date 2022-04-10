@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:padding="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -18,7 +17,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:id="@+id/note"
             android:orientation="vertical">
 
@@ -39,7 +37,7 @@
                     android:paddingBottom="10dp"
                     android:text="This is your Developer"
                     android:textSize="18sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark_grey"
                     android:layout_weight="1"
 
                     android:paddingLeft="10dp">
@@ -53,8 +51,9 @@
                     android:layout_height="match_parent"
                     android:id="@+id/menupopbutton"
                     android:layout_weight="0"
-                    android:src="@drawable/more"
-                    ></ImageView>
+                    android:src="@drawable/more">
+
+                </ImageView>
 
 
             </LinearLayout>
@@ -70,7 +69,7 @@
                 android:paddingTop="10dp"
                 android:text="This is your code which appear here"
                 android:textSize="13sp"
-                android:textColor="@color/black">
+                android:textColor="@color/dark_grey">
                 
             </TextView>
 

@@ -82,7 +82,7 @@ public class CreateNotesActivity extends AppCompatActivity {
                 String content=mcreatecontentofnote.getText().toString();
                 if(title.isEmpty() || content.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(),"Both field are Require",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Both field are Required",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -97,8 +97,8 @@ public class CreateNotesActivity extends AppCompatActivity {
                     documentReference.set(note).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(getApplicationContext(),"Note Created Succesffuly",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(CreateNotesActivity.this, JournalFragment.class));
+                            Toast.makeText(getApplicationContext(),"Note Created Successfuly",Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
