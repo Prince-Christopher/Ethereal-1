@@ -16,6 +16,15 @@
         android:theme="@style/Theme.Ethereal"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.CreateNotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.EditNotesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NoteDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.HealthPointsDesc"
             android:exported="false" />
         <activity

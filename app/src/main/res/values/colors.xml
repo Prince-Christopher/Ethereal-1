@@ -31,14 +31,14 @@
     <color name="proudtangerine">#FFCCBC</color>
     <color name="sickviolet">#D1C4E9</color>
     <color name="sillyred">#FFCDD2</color>
-<!--    <color name="color1" >#cdc9c3</color>-->
-<!--    <color name="color2" >#c6ebc9</color>-->
-<!--    <color name="color3" >#cfffa5</color>-->
-<!--    <color name="color4" >#a7c5eb</color>-->
-<!--    <color name="color5" >#f3e6e3</color>-->
-<!--    <color name="color6" >#efbbcf</color>-->
-<!--    <color name="color7" >#d6b0b1</color>-->
-<!--    <color name="color8" >#ccf6c8</color>-->
-<!--    <color name="color9" >#ffe0ac</color>-->
-<!--    <color name="color10" >#e5cfe5</color>-->
+    <color name="color1" >#cdc9c3</color>
+    <color name="color2" >#c6ebc9</color>
+    <color name="color3" >#cfffa5</color>
+    <color name="color4" >#a7c5eb</color>
+    <color name="color5" >#f3e6e3</color>
+    <color name="color6" >#efbbcf</color>
+    <color name="color7" >#d6b0b1</color>
+    <color name="color8" >#ccf6c8</color>
+    <color name="color9" >#ffe0ac</color>
+    <color name="color10" >#e5cfe5</color>
 </resources>

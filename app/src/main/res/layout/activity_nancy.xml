@@ -28,11 +28,11 @@
                 <ImageButton
                     android:id="@+id/botback"
                     android:layout_width="25dp"
-                    android:hapticFeedbackEnabled="true"
                     android:layout_height="25dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/back"
-                    android:backgroundTint="@color/white" />
+                    android:backgroundTint="@color/white"
+                    android:hapticFeedbackEnabled="true" />
 
                 <ImageView
                     android:id="@+id/nancy"
